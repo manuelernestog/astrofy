@@ -1,0 +1,21 @@
+{
+  "name": "Sstro Personal Website Template",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^0.11.1",
+    "@astrojs/rss": "^1.0.1",
+    "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/tailwind": "^1.0.1",
+    "astro": "^1.2.3",
+    "daisyui": "^2.27.0"
+  }
+}
