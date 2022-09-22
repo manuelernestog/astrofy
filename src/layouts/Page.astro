@@ -15,9 +15,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
   <body>
     <div class="bg-base-100 drawer drawer-mobile">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content flex flex-col">
+      <div class="drawer-content flex flex-col bg-base-100">
         <Header title={SITE_TITLE} />
-        <main class="p-6 pb-16 bg-base-100">
+        <main class="p-6 pb-16 px-8 md:px-12">
           <slot />
         </main>
         <Footer />

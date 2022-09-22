@@ -1,11 +1,49 @@
 ---
-import MainLayout from "../layouts/Main.astro";
+import PageLayout from "../layouts/Page.astro";
 import Card from "../components/Card.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 ---
 
-<MainLayout>
-  <Card />
+<PageLayout>
+  <div class="pb-8">
+    <div class="py-4">
+      <text class="text-2xl"> Hey there 👋</text>
+    </div>
+    <div>
+      <text class="text-6xl font-bold"> I'm Manuel Ernesto</text>
+    </div>
+    <div class="py-2">
+      <text>
+        I am a Cuban Software Engineer. I am a big fan of programming, web development, and entrepreneurship. I work on
+        creating computer solutions that solve problems in a simple way and share everything I learn along the way. I like
+        minimalism, Open-Source and good music.</text
+      >
+    </div>
+  </div>
 
-</MainLayout>
+  <div>
+    <div class="text-3xl text-center w-full font-bold">My last projects {'</>'}</div>
+  </div>
+
+  <div class="flex flex-wrap mb-5 mt-3">
+    <Card
+      title="WeekTodo"
+      img="https://weektodo.me/assets/images/weektodo-opengraph-1200x630.png"
+      desc="Free minimalist weektly planner focused in privacy."
+      url="https://weektodo.me/"
+    />
+    <Card
+      title="Productiveness"
+      img="https://softr-prod.imgix.net/applications/f988aa05-d312-4aa6-812e-832bdc75388d/assets/d2c87a17-4fc7-455f-a656-5e4cdbe7aa71.png"
+      desc="Discover the best productivity apps in the market."
+      url="https://www.productiveness.net/"
+    />
+    <Card
+      title="Zen Twitter"
+      img="https://lh3.googleusercontent.com/NGt846Flv6wyBSlYzfJkFHAJ8mcG1pf4M-InYeZnp4VsIk6JKk8nZ2ZKskDlvHDAEYr_biSO8jtXIWI83OXD5RNXWg=w640-h400-e365-rj-sc0x00ffffff"
+      desc="Disable Twitter vanity metrics, notifications and distractions."
+      url="https://chrome.google.com/webstore/detail/zen-twitter/nlkendkabgopehmlmohfbkgkjjdjepnb"
+    />
+  </div>
+</PageLayout>
