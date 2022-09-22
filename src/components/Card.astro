@@ -1,5 +1,5 @@
 ---
-const { title, img, desc, url } = Astro.props;
+const { title, img, desc, url, badge } = Astro.props;
 ---
 
 <div class="md:w-1/3 w-full">
@@ -9,7 +9,7 @@ const { title, img, desc, url } = Astro.props;
       <div class="card-body">
         <h2 class="card-title">
           {title}
-          <div class="badge badge-secondary">NEW</div>
+          {badge && <div class="badge badge-secondary">{badge}</div>}
         </h2>
         <p>{desc}</p>
       </div>
