@@ -1,9 +1,11 @@
 ---
-const { title, img, desc, url, badge, tags } = Astro.props;
+const { title, img, desc, url, badge, tags, target } = Astro.props;
+
+let cardTarget = target ? target : "_blank";
 ---
 
 <div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]">
-  <a href={url} target="_blank">
+  <a href={url} target={cardTarget}>
     <div class="hero-content flex-col md:flex-row">
       <img src={img} class="max-w-full md:max-w-[13rem] rounded-lg" />
       <div class="grow">
