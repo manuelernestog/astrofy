@@ -1,5 +1,5 @@
 ---
-const { title, img, desc, url, badge } = Astro.props;
+const { title, img, desc, url, badge, tags } = Astro.props;
 ---
 
 <div class="md:w-1/3 w-full">
@@ -12,6 +12,9 @@ const { title, img, desc, url, badge } = Astro.props;
           {badge && <div class="badge badge-secondary">{badge}</div>}
         </h2>
         <p>{desc}</p>
+        <div class="card-actions justify-end">
+          {tags && tags.map((tag) => <div class="badge badge-outline">{tag}</div>)}
+        </div>
       </div>
     </div>
   </a>
