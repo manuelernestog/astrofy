@@ -5,7 +5,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
 <PageLayout>
   <div>
-    <div class="text-3xl w-full font-bold mb-5">My last projects {"</>"}</div>
+    <div class="text-3xl w-full font-bold mb-5">Applications</div>
   </div>
 
   <HorizontalCard
@@ -22,13 +22,24 @@ import HorizontalCard from "../components/HorizontalCard.astro";
     desc="Discover the best productivity apps in the market."
     url="https://www.productiveness.net/"
   />
+
   <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Qvalive"
+    img="https://qvalive.com/assets/images/qvalive-splash.jpg"
+    desc="QvaLive es el espacio de las transmisiones cuabanas en vivo por internet."
+    url="https://qvalive.com/"
+  />
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Chrome Extensions</div>
+  </div>
+
   <HorizontalCard
     title="Zen Twitter"
     img="https://lh3.googleusercontent.com/NGt846Flv6wyBSlYzfJkFHAJ8mcG1pf4M-InYeZnp4VsIk6JKk8nZ2ZKskDlvHDAEYr_biSO8jtXIWI83OXD5RNXWg=w640-h400-e365-rj-sc0x00ffffff"
     desc="Disable Twitter vanity metrics, notifications and distractions."
     url="https://chrome.google.com/webstore/detail/zen-twitter/nlkendkabgopehmlmohfbkgkjjdjepnb"
     badge="FOSS"
-    tags={["Chrome Extension", "Free"]}
   />
 </PageLayout>
