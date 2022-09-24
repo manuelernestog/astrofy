@@ -13,11 +13,11 @@ export interface Props {
 }
 
 const {
-  content: { title, description, pubDate, updatedDate, heroImage },
+  content: { title, description, pubDate, updatedDate, heroImage }
 } = Astro.props;
 ---
 
-<PageLayout>
+<PageLayout title={title} description={description} image={heroImage}>
   <main class="flex justify-center">
     <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
       {heroImage && <img src={heroImage} alt={title} class="w-full mb-6" />}
