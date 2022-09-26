@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "Demo Post 3"
-description: "Lorem ipsum dolor sit amet"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 pubDate: "Sep 12 2022"
 heroImage: "/post_img.jpeg"
 ---
