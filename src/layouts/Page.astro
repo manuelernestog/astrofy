@@ -19,9 +19,11 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.prop
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col bg-base-100">
         <Header title={SITE_TITLE} />
-        <main class="p-6 pt-10 px-8 md:px-20">
-          <slot />
-        </main>
+        <div class="flex justify-center">
+          <main class="p-6 pt-10 max-w-[900px]">
+            <slot />
+          </main>
+        </div>
         <Footer />
       </div>
       <SideBar />
