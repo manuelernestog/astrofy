@@ -1,6 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import PageLayout from "./Base.astro";
+import BaseLayout from "./BaseLayout.astro";
 
 export interface Props {
   content: {
@@ -17,7 +17,7 @@ const {
 } = Astro.props;
 ---
 
-<PageLayout title={title} description={description} image={heroImage}>
+<BaseLayout title={title} description={description} image={heroImage}>
   <main class="flex justify-center">
     <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
       {heroImage && <img src={heroImage} alt={title} class="w-full mb-6" />}
@@ -35,4 +35,4 @@ const {
         <slot />
     </article>
   </main>
-</PageLayout>
+</BaseLayout>
