@@ -1,6 +1,6 @@
 {
-  "name": "Astro Personal Website Template",
-  "description": "Astro personal website template with Project Section, CV Section, Paginated Blog, RSS Feed, SEO Friendly, Visual themes and Responsive Desing.",
+  "name": "Astro Minimalist Personal Website",
+  "description": "Astro Minimalist personal website template with Project Section, CV Section, Paginated Blog, RSS Feed, SEO Friendly, Visual themes and Responsive Desing.",
   "type": "module",
   "version": "1.0.0",
   "private": true,
