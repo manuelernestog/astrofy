@@ -68,6 +68,15 @@ npm run dev
 #### Layout Components
 
 The `BaseHead`, `Footer`, `Header` and `SideBar` components are already included in the layout sistem. To change the website content you can edit the content of this componenets.
+
+##### SideBar
+
+In the Sidebar you can change the links to all your website pages. 
+
+You can change your avatar shape using [mask classes](https://daisyui.com/components/mask/).
+
+The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack.
+
 #### TimeLine
 
 The timeline components are used to conform the CV.
