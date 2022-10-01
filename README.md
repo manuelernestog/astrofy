@@ -1,6 +1,6 @@
-# Astro Minimalist Personal Website
+# Astro Modern Personal Website
 
-Minimalist Personal Website Template with Project Section, CV Section, Paginated Blog, RSS Feed, SEO Friendly, Visual themes and Responsive Desing for Astro framework.
+Modern Personal Website Template with Project Section, CV Section, Paginated Blog, RSS Feed, SEO Friendly, Visual themes and Responsive Desing for Astro framework.
 
 ## Installation
 
