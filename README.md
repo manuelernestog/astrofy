@@ -2,8 +2,12 @@
 
 ![Astro Modern Personal Website](public/social_img.png)
 
-
 Modern Personal Website Template with Project Section, CV Section, Paginated Blog, RSS Feed, SEO Friendly, Visual themes and Responsive Desing for Astro framework.
+
+## Demo
+
+View a live demo of the [Astro Modern Personal Website](https://astro-modern-personal-website.netlify.app/)
+
 
 ## Installation
 
