@@ -23,7 +23,7 @@ Once the packages are installed you are ready to run astro. Astro comes with a b
 npm run dev
 ```
 
-### Tech Stack
+## Tech Stack
 
 - [Astro](astro.build)
 - [tailwindcss](https://tailwindcss.com/)
@@ -70,13 +70,13 @@ npm run dev
 └── tsconfig.json
 ```
 
-### Components usage
+## Components usage
 
-#### Layout Components
+### Layout Components
 
 The `BaseHead`, `Footer`, `Header` and `SideBar` components are already included in the layout sistem. To change the website content you can edit the content of this componenets.
 
-##### SideBar
+#### SideBar
 
 In the Sidebar you can change the links to all your website pages. 
 
@@ -84,7 +84,7 @@ You can change your avatar shape using [mask classes](https://daisyui.com/compon
 
 The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack.
 
-#### TimeLine
+### TimeLine
 
 The timeline components are used to conform the CV.
 
@@ -99,7 +99,7 @@ The timeline components are used to conform the CV.
 </div>
 ```
 
-#### Card & HorizontalCard
+### Card & HorizontalCard
 ``` html
    <HorizontalCard
       title="Card Title"
@@ -116,17 +116,17 @@ The timeline components are used to conform the CV.
 
 Include `BaseLayout` in each page you add and `PostLayout` to your post pages.
 
-### Pages
+## Pages
 
-#### Blog
+### Blog
 
 Add your `md` blog post in the `/pages/blog/` folder.
 
-#### [page].astro
+### [page].astro
 
 The `[page].astro` is the route to work with the paginated post list. You can change there the number of items listed for each page and the pagination button labels.
 
-##### Post format
+#### Post format
 Add code with this format in the top of each post file.
 ```
 ---
@@ -137,21 +137,33 @@ pubDate: "Post date format(Sep 10 2022)"
 heroImage: "Post Hero Image URL"
 ---
 ```
-#### Static pages
+### Static pages
 
 The other pages inlcuded in the template are static pages. The `index` page belong to the root page. You can add your pages directly in the `/pages` folder and then add a link to that pages in the `sidebar` component.
 
 Feel free to modify the content included in the pages that the template contains or add the ones you need.
 
-### Theming
+## Theming
 
 For change the template theme change the `data-theme` atribute of the `<html>` tag in `BaseLayout.astro` file. 
 
 You can chose among 30 themes available or create your custom theme. See themes available [here](https://daisyui.com/docs/themes/).
 
-### Deploy
+## Deploy
+
+You can deploy your site on your favorite static hosting service such as Vercel, Netlify, GitHub Pages, etc.
 
 The configuration for the deployment varies depending on the platform where you are going to do it. See the [official Astro information](https://docs.astro.build/en/guides/deploy/) to deploy your website.
 
+> **⚠️ CAUTION** </br>
+> The Blog pagination of this template is implemented using dynamic route parameters in its filename and for now this format is incompatible with SSR deploy configs, so please use the static deploy options for your deployments.
+
+## Contributing
+
+Suggestions and pull requests are welcomed! Feel free to open a discussion, an issue or create a pull request.
+
+## License
+
+Astro Modern Personal Website is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astro-modern-personal-website/blob/main/LICENSE) file for details.
 
 
