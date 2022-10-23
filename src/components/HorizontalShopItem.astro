@@ -1,0 +1,24 @@
+---
+const { title, img, desc, url, badge, tags, target = "_blank", pricing, oldPricing, checkoutUrl } = Astro.props;
+---
+
+<div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]">
+  <div class="hero-content flex-col md:flex-row">
+    <img src={img} alt={title} class="max-w-full md:max-w-[13rem] rounded-lg" />
+    <div class="grow w-full p-5 md:p-0">
+      <h1 class="text-xl font-bold">
+        {title}
+        {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
+      </h1>
+      <div>
+        <span class="text-xl mr-1"> {pricing}</span>
+        <span class="text-md opacity-50 line-through">{oldPricing}</span>
+      </div>
+      <p class="py-1 text-1xl">{desc}</p>
+      <div class="card-actions md:justify-end mt-3 md:mt-0 flex">
+        <a class="btn btn-primary grow md:grow-0" href={checkoutUrl}>Buy Now</a>
+        <a href={url} class="btn btn-outline grow md:grow-0">Details </a>
+      </div>
+    </div>
+  </div>
+</div>
