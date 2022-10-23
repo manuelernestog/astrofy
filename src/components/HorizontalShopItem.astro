@@ -1,5 +1,18 @@
 ---
-const { title, img, desc, url, badge, tags, target = "_blank", pricing, oldPricing, checkoutUrl } = Astro.props;
+const {
+  title,
+  img,
+  desc,
+  url,
+  badge,
+  target = "_blank",
+  pricing,
+  oldPricing,
+  checkoutUrl,
+  details = true,
+  custom_link = false,
+  custom_link_label = "",
+} = Astro.props;
 ---
 
 <div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]">
@@ -16,8 +29,21 @@ const { title, img, desc, url, badge, tags, target = "_blank", pricing, oldPrici
       </div>
       <p class="py-1 text-1xl">{desc}</p>
       <div class="card-actions md:justify-end mt-3 md:mt-0 flex">
-        <a class="btn btn-primary grow md:grow-0" href={checkoutUrl}>Buy Now</a>
-        <a href={url} class="btn btn-outline grow md:grow-0">Details </a>
+        <a class="btn btn-primary grow md:grow-0" href={checkoutUrl} target="_blank">Buy</a>
+        {
+          custom_link && (
+            <a href={custom_link} target="_blank" class="btn btn-outline grow md:grow-0">
+              {custom_link_label}
+            </a>
+          )
+        }
+        {
+          details && (
+            <a href={url} class="btn btn-outline grow md:grow-0">
+              Details
+            </a>
+          )
+        }
       </div>
     </div>
   </div>

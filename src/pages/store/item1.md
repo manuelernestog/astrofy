@@ -1,13 +1,16 @@
 ---
-layout: "../../layouts/PostLayout.astro"
+layout: "../../layouts/StoreItemLayout.astro"
 title: "Demo Item 1"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: "Sep 10 2022"
+details: true
+custom_link_label: "Live Preview"
+custom_link: "https://demourl.com/"
+pubDate: "Sep 15 2022"
 pricing: "$15"
 badge: "Featured"
 tags: ['Tag1','Tag2']
-checkoutUrl: "https://github.com/"
-heroImage: "/squared_item.png"
+checkoutUrl: "https://checkouturl.com/"
+heroImage: "/itemPreview.png"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
