@@ -23,7 +23,7 @@ Once the packages are installed you are ready to run astro. Astro comes with a b
 npm run dev
 ```
 
-### Tech Stack
+## Tech Stack
 
 - [Astro](astro.build)
 - [tailwindcss](https://tailwindcss.com/)
@@ -194,9 +194,21 @@ For change the template theme change the `data-theme` atribute of the `<html>` t
 
 You can chose among 30 themes available or create your custom theme. See themes available [here](https://daisyui.com/docs/themes/).
 
-### Deploy
+## Deploy
+
+You can deploy your site on your favorite static hosting service such as Vercel, Netlify, GitHub Pages, etc.
 
 The configuration for the deployment varies depending on the platform where you are going to do it. See the [official Astro information](https://docs.astro.build/en/guides/deploy/) to deploy your website.
 
+> **⚠️ CAUTION** </br>
+> The Blog pagination of this template is implemented using dynamic route parameters in its filename and for now this format is incompatible with SSR deploy configs, so please use the default static deploy options for your deployments.
+
+## Contributing
+
+Suggestions and pull requests are welcomed! Feel free to open a discussion, an issue or create a pull request.
+
+## License
+
+Astro Modern Personal Website is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astro-modern-personal-website/blob/main/LICENSE) file for details.
 
 
