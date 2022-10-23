@@ -103,13 +103,32 @@ The timeline components are used to conform the CV.
 ``` html
    <HorizontalCard
       title="Card Title"
-      img="imge_url""
+      img="imge_url"
       desc="Description"
       url="Link URL"
       target="Optional link target (_blank default)"
       badge="Optional badge"
       tags={['Array','of','tags']}
     />
+```
+
+#### HorizontalCard Shop Item
+
+This compoenet is already included in the Store layout of the template. In case you want to use it in other place this are the props.
+``` html
+   <HorizontalShopItem
+        title= "Item Title"
+        img= "imge_url"
+        desc= "Item description"
+        pricing= "current_price"
+        oldPricing= "old_price"
+        checkoutUrl= "external store checkout url"
+        badge="Optional badge"
+        details= true # show or hide details btn (default is true)
+        url= "item details url"
+        custom_link= "Custom link url"
+        custom_link_label= "Cutom link btn label" target="Optional link target (_self default)"
+      />
 ```
 
 ### Layouts
@@ -122,7 +141,7 @@ Include `BaseLayout` in each page you add and `PostLayout` to your post pages.
 
 Add your `md` blog post in the `/pages/blog/` folder.
 
-#### [page].astro
+##### [page].astro
 
 The `[page].astro` is the route to work with the paginated post list. You can change there the number of items listed for each page and the pagination button labels.
 
@@ -135,6 +154,32 @@ title: "Post Title"
 description: "Description"
 pubDate: "Post date format(Sep 10 2022)"
 heroImage: "Post Hero Image URL"
+---
+```
+#### Shop
+
+Add your `md` item in the `/pages/shop/` folder.
+
+##### [page].astro
+
+The `[page].astro` is the route to work with the paginated item list. You can change there the number of items listed for each page and the pagination button labels. The shop will render all `.md` files you incle inside this folder.
+
+##### Item format
+Add code with this format in the top of each item file.
+``` js
+---
+layout: "../../layouts/StoreItemLayout.astro"
+title: "Demo Item 1"
+description: "Item description"
+heroImage: "Item img url"
+details: true // show or hide details btn 
+custom_link_label: "Custom btn link label"
+custom_link: "Custom btn link"
+pubDate: "Sep 15 2022"
+pricing: "$15"
+oldPricing: "$25.5"
+badge: "Featured"
+checkoutUrl: "https://checkouturl.com/"
 ---
 ```
 #### Static pages

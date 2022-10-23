@@ -8,7 +8,6 @@ custom_link: "https://demourl.com/"
 pubDate: "Sep 15 2022"
 pricing: "$15"
 badge: "Featured"
-tags: ['Tag1','Tag2']
 checkoutUrl: "https://checkouturl.com/"
 heroImage: "/itemPreview.png"
 ---
