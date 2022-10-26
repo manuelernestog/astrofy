@@ -194,6 +194,10 @@ For change the template theme change the `data-theme` atribute of the `<html>` t
 
 You can chose among 30 themes available or create your custom theme. See themes available [here](https://daisyui.com/docs/themes/).
 
+## Sitemap
+
+The Sitemap is generated automatically when you build your website in the root of the domain. Please update the `robots.txt` file in the public folder with your site name URL for the Sitemap.
+
 ## Deploy
 
 You can deploy your site on your favorite static hosting service such as Vercel, Netlify, GitHub Pages, etc.
