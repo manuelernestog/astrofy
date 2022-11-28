@@ -6,7 +6,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
   (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 );
 
-const last_posts = posts.slice(0, 3);
+const last_posts = posts.slice(0, 1);
 ---
 
 <BaseLayout>
