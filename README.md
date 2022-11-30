@@ -209,10 +209,22 @@ The configuration for the deployment varies depending on the platform where you 
 
 ## Contributing
 
-Suggestions and pull requests are welcomed! Feel free to open a discussion, an issue or create a pull request.
+Suggestions and pull requests are welcomed! Feel free to open a discussion or an issue for a new feature request or bug.
+
+One of the best ways of contribute is to grab a [bug report o feature suggestion](https://github.com/manuelernestog/astro-modern-personal-website/issues) that has been marked `accepted` and dig in.
+
+Please be wary of working on issues *not* marked as `accepted`. Just because someone has created an issue doesn't mean we'll accept a pull request for it.
 
 ## License
 
 Astro Modern Personal Website is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astro-modern-personal-website/blob/main/LICENSE) file for details.
+
+## Contributors
+
+<a href="https://github.com/manuelernestog/astro-modern-personal-website/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=manuelernestog/astro-modern-personal-website" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
 
 
