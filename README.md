@@ -25,7 +25,7 @@ npm run dev
 
 ## Tech Stack
 
-- [Astro](astro.build)
+- [Astro](https://astro.build)
 - [tailwindcss](https://tailwindcss.com/)
 - [DaisyUI](https://daisyui.com/)
 
@@ -34,14 +34,14 @@ npm run dev
 ## Project Strucutre
 
 ``` php
-├── src/ 
+├── src/
 │   ├── components/
 │   │   ├── cs/
-│   │   │   ├── TimeLine 
+│   │   │   ├── TimeLine
 │   │   ├── BaseHead.astro
-│   │   ├── Card.astro 
-│   │   ├── Footer.astro 
-│   │   ├── Header.astro 
+│   │   ├── Card.astro
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
 │   │   └── HorizontalCard.jsx
 │   │   └── SideBar.jsx
 │   ├── layouts/
@@ -78,7 +78,7 @@ The `BaseHead`, `Footer`, `Header` and `SideBar` components are already included
 
 ##### SideBar
 
-In the Sidebar you can change the links to all your website pages. 
+In the Sidebar you can change the links to all your website pages.
 
 You can change your avatar shape using [mask classes](https://daisyui.com/components/mask/).
 
@@ -172,7 +172,7 @@ layout: "../../layouts/StoreItemLayout.astro"
 title: "Demo Item 1"
 description: "Item description"
 heroImage: "Item img url"
-details: true // show or hide details btn 
+details: true // show or hide details btn
 custom_link_label: "Custom btn link label"
 custom_link: "Custom btn link"
 pubDate: "Sep 15 2022"
@@ -190,7 +190,7 @@ Feel free to modify the content included in the pages that the template contains
 
 ### Theming
 
-For change the template theme change the `data-theme` atribute of the `<html>` tag in `BaseLayout.astro` file. 
+For change the template theme change the `data-theme` atribute of the `<html>` tag in `BaseLayout.astro` file.
 
 You can chose among 30 themes available or create your custom theme. See themes available [here](https://daisyui.com/docs/themes/).
 
