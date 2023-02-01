@@ -1,20 +1,10 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
+import { BlogSchema } from "../content/config";
 import BaseLayout from "./BaseLayout.astro";
 
-export interface Props {
-  content: {
-    title: string;
-    description: string;
-    pubDate?: string;
-    updatedDate?: string;
-    heroImage?: string;
-  };
-}
+export interface Props extends BlogSchema {}
 
-const {
-  content: { title, description, pubDate, updatedDate, heroImage }
-} = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}>

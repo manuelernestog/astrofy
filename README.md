@@ -44,15 +44,18 @@ npm run dev
 │   │   ├── Header.astro
 │   │   └── HorizontalCard.jsx
 │   │   └── SideBar.jsx
+│   ├── content/
+│   │   ├── blog/
+│   │   │   ├── post1.md
+│   │   │   ├── post2.md
+│   │   │   └── post3.md
 │   ├── layouts/
 │   │   └── BaseLayout.astro
 │   │   └── PostLayout.astro
 │   └── pages/
 │   │   ├── blog/
-│   │   │   ├── [page].astro
-│   │   │   ├── post1.md
-│   │   │   ├── post2.md
-│   │   │   └── post3.md
+│   │   │   ├── [...page].astro
+│   │   │   ├── [slug].astro
 │   │   └── cv.astro
 │   │   └── index.astro
 │   │   └── projects.astro
@@ -135,15 +138,16 @@ This compoenet is already included in the Store layout of the template. In case 
 
 Include `BaseLayout` in each page you add and `PostLayout` to your post pages.
 
-### Pages
+### Content
+
+You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/' folder, you will need add it at config.ts.
+
+#### config.ts
+Where you need to define your content collections, we define our content schemas too.
 
 #### Blog
 
-Add your `md` blog post in the `/pages/blog/` folder.
-
-##### [page].astro
-
-The `[page].astro` is the route to work with the paginated post list. You can change there the number of items listed for each page and the pagination button labels.
+Add your `md` blog post in the `/content/blog/` folder.
 
 ##### Post format
 Add code with this format in the top of each post file.
@@ -156,6 +160,21 @@ pubDate: "Post date format(Sep 10 2022)"
 heroImage: "Post Hero Image URL"
 ---
 ```
+
+### Pages
+
+#### Blog
+
+Blog uses Astro's content collection to query post's `md`.
+
+##### [page].astro
+
+The `[page].astro` is the route to work with the paginated post list. You can change there the number of items listed for each page and the pagination button labels.
+
+##### [slug].astro
+
+The `[slug].astro` is the base route for every blog post, you can customize the page layout or behaviour, by default uses `content/blog` for content collection and `PostLayout` as layout.
+
 #### Shop
 
 Add your `md` item in the `/pages/shop/` folder.
