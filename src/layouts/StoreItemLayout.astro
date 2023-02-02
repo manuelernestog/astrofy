@@ -1,6 +1,8 @@
 ---
 import { StoreSchema } from "../content/config";
 import BaseLayout from "./BaseLayout.astro";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 
 export interface Props extends StoreSchema {}
 
@@ -16,6 +18,9 @@ const {
   custom_link,
   custom_link_label,
 } = Astro.props;
+
+dayjs.extend(localizedFormat);
+const displayDate = dayjs(updatedDate).format("ll");
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}>
@@ -48,7 +53,7 @@ const {
         updatedDate && (
           <div>
             {" "}
-            Last updated on <time>{updatedDate}</time>{" "}
+            Last updated on <time>{displayDate}</time>{" "}
           </div>
         )
       }
