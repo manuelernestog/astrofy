@@ -1,20 +1,14 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
+import { BlogSchema } from "../content/config";
 import BaseLayout from "./BaseLayout.astro";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 
-export interface Props {
-  content: {
-    title: string;
-    description: string;
-    pubDate?: string;
-    updatedDate?: string;
-    heroImage?: string;
-  };
-}
+export interface Props extends BlogSchema {}
 
-const {
-  content: { title, description, pubDate, updatedDate, heroImage }
-} = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+dayjs.extend(localizedFormat);
+const displayDate = dayjs(pubDate).format("ll");
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}>
@@ -22,7 +16,7 @@ const {
     <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
       {heroImage && <img src={heroImage} alt={title} class="w-full mb-6" />}
       <h1 class="title my-2 text-4xl font-bold">{title}</h1>
-      {pubDate && <time>{pubDate}</time>}
+      {pubDate && <time>{displayDate}</time>}
       {
         updatedDate && (
           <div>
@@ -32,7 +26,7 @@ const {
         )
       }
       <div class="divider my-2"></div>
-        <slot />
+      <slot />
     </article>
   </main>
 </BaseLayout>
