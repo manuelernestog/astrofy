@@ -47,6 +47,9 @@ npm run dev
 │   │   │   ├── post1.md
 │   │   │   ├── post2.md
 │   │   │   └── post3.md
+│   │   ├── store/
+│   │   │   ├── item1.md
+│   │   │   ├── item2.md
 │   ├── layouts/
 │   │   └── BaseLayout.astro
 │   │   └── PostLayout.astro
@@ -122,15 +125,6 @@ This compoenet is already included in the Store layout of the template. In case 
   checkoutUrl="external store checkout url"
   badge="Optional badge"
   details="true"
-  #
-  show
-  or
-  hide
-  details
-  btn
-  (default
-  is
-  true)
   url="item details url"
   custom_link="Custom link url"
   custom_link_label="Cutom link btn label"
@@ -159,7 +153,6 @@ Add code with this format in the top of each post file.
 
 ```
 ---
-layout: "../../layouts/PostLayout.astro"
 title: "Post Title"
 description: "Description"
 pubDate: "Post date format(Sep 10 2022)"
@@ -195,7 +188,6 @@ Add code with this format in the top of each item file.
 
 ```js
 ---
-layout: "../../layouts/StoreItemLayout.astro"
 title: "Demo Item 1"
 description: "Item description"
 heroImage: "Item img url"

@@ -1,21 +1,20 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
+import { StoreSchema } from "../content/config";
 import BaseLayout from "./BaseLayout.astro";
 
+export interface Props extends StoreSchema {}
+
 const {
-  content: {
-    title,
-    description,
-    pubDate,
-    updatedDate,
-    heroImage,
-    pricing,
-    oldPricing,
-    checkoutUrl,
-    badge,
-    custom_link,
-    custom_link_label,
-  },
+  title,
+  description,
+  updatedDate,
+  heroImage,
+  pricing,
+  oldPricing,
+  checkoutUrl,
+  badge,
+  custom_link,
+  custom_link_label,
 } = Astro.props;
 ---
 
@@ -43,7 +42,6 @@ const {
             }
             <a class="btn btn-primary grow md:grow-0 ml-4" href={checkoutUrl} target="_blank">Buy Now</a>
           </div>
-        
         </div>
       </div>
       {
