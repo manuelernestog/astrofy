@@ -24,13 +24,14 @@ npm run dev
 
 ## Tech Stack
 
-- [Astro](astro.build)
+- [Astro](https://astro.build)
 - [tailwindcss](https://tailwindcss.com/)
 - [DaisyUI](https://daisyui.com/)
 
 ## Project Strucutre
 
-```php
+
+``` php
 ├── src/
 │   ├── components/
 │   │   ├── cs/
@@ -41,15 +42,18 @@ npm run dev
 │   │   ├── Header.astro
 │   │   └── HorizontalCard.jsx
 │   │   └── SideBar.jsx
+│   ├── content/
+│   │   ├── blog/
+│   │   │   ├── post1.md
+│   │   │   ├── post2.md
+│   │   │   └── post3.md
 │   ├── layouts/
 │   │   └── BaseLayout.astro
 │   │   └── PostLayout.astro
 │   └── pages/
 │   │   ├── blog/
-│   │   │   ├── [page].astro
-│   │   │   ├── post1.md
-│   │   │   ├── post2.md
-│   │   │   └── post3.md
+│   │   │   ├── [...page].astro
+│   │   │   ├── [slug].astro
 │   │   └── cv.astro
 │   │   └── index.astro
 │   │   └── projects.astro
@@ -138,15 +142,16 @@ This compoenet is already included in the Store layout of the template. In case 
 
 Include `BaseLayout` in each page you add and `PostLayout` to your post pages.
 
-### Pages
+### Content
+
+You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/' folder, you will need add it at config.ts.
+
+#### config.ts
+Where you need to define your content collections, we define our content schemas too.
 
 #### Blog
 
-Add your `md` blog post in the `/pages/blog/` folder.
-
-##### [page].astro
-
-The `[page].astro` is the route to work with the paginated post list. You can change there the number of items listed for each page and the pagination button labels.
+Add your `md` blog post in the `/content/blog/` folder.
 
 ##### Post format
 
@@ -161,6 +166,20 @@ pubDate: "Post date format(Sep 10 2022)"
 heroImage: "Post Hero Image URL"
 ---
 ```
+
+### Pages
+
+#### Blog
+
+Blog uses Astro's content collection to query post's `md`.
+
+##### [page].astro
+
+The `[page].astro` is the route to work with the paginated post list. You can change there the number of items listed for each page and the pagination button labels.
+
+##### [slug].astro
+
+The `[slug].astro` is the base route for every blog post, you can customize the page layout or behaviour, by default uses `content/blog` for content collection and `PostLayout` as layout.
 
 #### Shop
 
@@ -218,8 +237,20 @@ The configuration for the deployment varies depending on the platform where you 
 
 ## Contributing
 
-Suggestions and pull requests are welcomed! Feel free to open a discussion, an issue or create a pull request.
+Suggestions and pull requests are welcomed! Feel free to open a discussion or an issue for a new feature request or bug.
+
+One of the best ways of contribute is to grab a [bug report o feature suggestion](https://github.com/manuelernestog/astro-modern-personal-website/issues) that has been marked `accepted` and dig in.
+
+Please be wary of working on issues *not* marked as `accepted`. Just because someone has created an issue doesn't mean we'll accept a pull request for it.
 
 ## License
 
 Astro Modern Personal Website is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astro-modern-personal-website/blob/main/LICENSE) file for details.
+
+## Contributors
+
+<a href="https://github.com/manuelernestog/astro-modern-personal-website/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=manuelernestog/astro-modern-personal-website" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
