@@ -17,7 +17,7 @@ const {
 
 <div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]">
   <div class="hero-content flex-col md:flex-row">
-    <img src={img} alt={title} class="max-w-full md:max-w-[13rem] rounded-lg" />
+    {img && <img src={img} alt={title} class="max-w-full md:max-w-[13rem] rounded-lg" />}
     <div class="grow w-full p-5 md:p-0">
       <h1 class="text-xl font-bold">
         {title}
