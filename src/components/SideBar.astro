@@ -21,7 +21,13 @@
       <li><a href="mailto:contact.manuelernestog@gmail.com">Contact</a></li>
     </ul>
     <div class="social-icons px-4 my-2 flex self-center">
-      <a href="https://manuelernestog.github.io/paylink/" target="_blank" class="mx-3" aria-label="Support my work" title="Support my work">
+      <a
+        href="https://manuelernestog.github.io/paylink/"
+        target="_blank"
+        class="mx-3"
+        aria-label="Support my work"
+        title="Support my work"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -61,7 +67,13 @@
           ></path>
         </svg>
       </a>
-      <a href="https://www.linkedin.com/in/manuelernestogr" target="_blank" class="mx-3" aria-label="Linkedin" title="Linkedin">
+      <a
+        href="https://www.linkedin.com/in/manuelernestogr"
+        target="_blank"
+        class="mx-3"
+        aria-label="Linkedin"
+        title="Linkedin"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -89,28 +101,26 @@
   </div>
 </div>
 <script>
-  const homeLink = document.getElementById('home');
-  const projectsLink = document.getElementById('projects');
-  const servicesLink = document.getElementById('services');
-  const storeLink = document.getElementById('store');
-  const blogLink = document.getElementById('blog');
-  const cvLink = document.getElementById('cv');
+  const homeLink = document.getElementById("home");
+  const projectsLink = document.getElementById("projects");
+  const servicesLink = document.getElementById("services");
+  const storeLink = document.getElementById("store");
+  const blogLink = document.getElementById("blog");
+  const cvLink = document.getElementById("cv");
 
   var isHome = true;
 
   const url = window.location.href;
 
-  const pages = [ projectsLink, servicesLink, storeLink, blogLink, cvLink ];
+  const pages = [projectsLink, servicesLink, storeLink, blogLink, cvLink];
 
-  pages.forEach( (elem) => {
+  pages.forEach((elem) => {
     if (url.includes(elem.id)) {
       isHome = false;
-      elem.classList.add('active');
-      homeLink.classList.remove('active');
-
-    } 
-    if (isHome) {
-      homeLink.classList.add('active');
-    } 
-  })
+      elem.classList.add("active");
+    }
+  });
+  if (isHome) {
+    homeLink.classList.add("active");
+  }
 </script>
