@@ -105,14 +105,12 @@
   pages.forEach( (elem) => {
     if (url.includes(elem.id)) {
       isHome = false;
-      elem.classList.add('bg-neutral');
-      elem.classList.add('text-white');
-      homeLink.classList.remove('bg-neutral');
-      homeLink.classList.remove('text-white');
+      elem.classList.add('active');
+      homeLink.classList.remove('active');
+
     } 
-    if (isHome == true) {
-      homeLink.classList.add('bg-neutral');
-      homeLink.classList.add('text-white');
+    if (isHome) {
+      homeLink.classList.add('active');
     } 
   })
 </script>
