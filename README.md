@@ -30,8 +30,7 @@ npm run dev
 
 ## Project Strucutre
 
-
-``` php
+```php
 ├── src/
 │   ├── components/
 │   │   ├── cs/
@@ -141,6 +140,7 @@ Include `BaseLayout` in each page you add and `PostLayout` to your post pages.
 You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/' folder, you will need add it at config.ts.
 
 #### config.ts
+
 Where you need to define your content collections, we define our content schemas too.
 
 #### Blog
@@ -231,9 +231,9 @@ The configuration for the deployment varies depending on the platform where you 
 
 Suggestions and pull requests are welcomed! Feel free to open a discussion or an issue for a new feature request or bug.
 
-One of the best ways of contribute is to grab a [bug report o feature suggestion](https://github.com/manuelernestog/astro-modern-personal-website/issues) that has been marked `accepted` and dig in.
+One of the best ways of contribute is to grab a [bug report or feature suggestion](https://github.com/manuelernestog/astro-modern-personal-website/issues) that has been marked `accepted` and dig in.
 
-Please be wary of working on issues *not* marked as `accepted`. Just because someone has created an issue doesn't mean we'll accept a pull request for it.
+Please be wary of working on issues _not_ marked as `accepted`. Just because someone has created an issue doesn't mean we'll accept a pull request for it.
 
 ## License
 
