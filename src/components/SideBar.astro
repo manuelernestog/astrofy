@@ -117,10 +117,10 @@
   pages.forEach((elem) => {
     if (url.includes(elem.id)) {
       isHome = false;
-      elem.classList.add("bg-base-300");
+      elem.classList.add("active");
     }
   });
   if (isHome) {
-    homeLink.classList.add("bg-base-300");
+    homeLink.classList.add("active");
   }
 </script>
