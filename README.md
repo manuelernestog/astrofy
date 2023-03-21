@@ -30,8 +30,7 @@ npm run dev
 
 ## Project Strucutre
 
-
-``` php
+```php
 ├── src/
 │   ├── components/
 │   │   ├── cs/
@@ -88,6 +87,8 @@ You can change your avatar shape using [mask classes](https://daisyui.com/compon
 
 The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack.
 
+**Note**: In order to change the sidebar menu's active item style, look for the `activeClass` constant and change its value to your desired style (e.g. `active` for the primary colour).
+
 #### TimeLine
 
 The timeline components are used to conform the CV.
@@ -141,6 +142,7 @@ Include `BaseLayout` in each page you add and `PostLayout` to your post pages.
 You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/' folder, you will need add it at config.ts.
 
 #### config.ts
+
 Where you need to define your content collections, we define our content schemas too.
 
 #### Blog
@@ -231,9 +233,9 @@ The configuration for the deployment varies depending on the platform where you 
 
 Suggestions and pull requests are welcomed! Feel free to open a discussion or an issue for a new feature request or bug.
 
-One of the best ways of contribute is to grab a [bug report o feature suggestion](https://github.com/manuelernestog/astro-modern-personal-website/issues) that has been marked `accepted` and dig in.
+One of the best ways of contribute is to grab a [bug report or feature suggestion](https://github.com/manuelernestog/astro-modern-personal-website/issues) that has been marked `accepted` and dig in.
 
-Please be wary of working on issues *not* marked as `accepted`. Just because someone has created an issue doesn't mean we'll accept a pull request for it.
+Please be wary of working on issues _not_ marked as `accepted`. Just because someone has created an issue doesn't mean we'll accept a pull request for it.
 
 ## License
 
