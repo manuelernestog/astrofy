@@ -114,11 +114,7 @@
 
   const pages = [projectsLink, servicesLink, storeLink, blogLink, cvLink];
 
-  /*
-    * replace `bg-base-300` with `active` on the following line if
-    * you prefer the primary colour on the active menu's item
-  */
-  const activeClass = "bg-base-300"
+  const activeClass = "bg-base-300"; // For primary color replace with `active` class
 
   pages.forEach((elem) => {
     if (url.includes(elem.id)) {
