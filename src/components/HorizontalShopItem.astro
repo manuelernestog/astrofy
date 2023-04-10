@@ -12,11 +12,26 @@ const {
   custom_link = false,
   custom_link_label = "",
 } = Astro.props;
+import { Picture } from "@astrojs/image/components";
 ---
 
-<div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]">
+<div
+  class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
+>
   <div class="hero-content flex-col md:flex-row">
-    {img && <img src={img} alt={title} class="max-w-full md:max-w-[13rem] rounded-lg" />}
+    {
+      img && (
+        <Picture
+          aspectRatio="16:9"
+          widths={[400, 800, 1200, 1800]}
+          format={"jpeg"}
+          sizes="(max-width: 1800px) 100vw, 1800px"
+          src={img}
+          alt={title}
+          class="max-w-full md:max-w-[13rem] rounded-lg"
+        />
+      )
+    }
     <div class="grow w-full p-5 md:p-0">
       <h1 class="text-xl font-bold">
         {title}
@@ -28,10 +43,18 @@ const {
       </div>
       <p class="py-1 text-1xl">{desc}</p>
       <div class="card-actions md:justify-end mt-3 md:mt-0 flex">
-        <a class="btn btn-primary grow md:grow-0" href={checkoutUrl} target="_blank">Buy</a>
+        <a
+          class="btn btn-primary grow md:grow-0"
+          href={checkoutUrl}
+          target="_blank">Buy</a
+        >
         {
           custom_link && (
-            <a href={custom_link} target="_blank" class="btn btn-outline grow md:grow-0">
+            <a
+              href={custom_link}
+              target="_blank"
+              class="btn btn-outline grow md:grow-0"
+            >
               {custom_link_label}
             </a>
           )

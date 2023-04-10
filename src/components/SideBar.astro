@@ -1,3 +1,6 @@
+---
+import {Picture} from "@astrojs/image/components"
+---
 <div class="drawer-side bg-base-200">
   <label for="my-drawer" class="drawer-overlay bg-base-200"></label>
   <div class="menu flex flex-col flex-nowrap p-4 overflow-y-auto w-[21rem] bg-base-200 text-base-content">
@@ -5,7 +8,13 @@
       <a href="/">
         <div class="avatar transition ease-in-out w-1/2 hover:scale-[102%] block m-auto mt-3 mb-6">
           <div>
-            <img class="mask mask-circle" src="/profile.jpg" alt="profile image" />
+            <Picture class="mask mask-circle"   
+            aspectRatio="1:1"   
+            widths={[400, 800, 1200, 1800]} 
+            format={ "jpeg"}
+            sizes="(max-width: 1800px) 100vw, 1800px"
+            src="/profile.jpg" alt="profile image"   />
+
           </div>
         </div>
       </a>
@@ -117,12 +126,13 @@
   const activeClass = "bg-base-300"; // For primary color replace with `active` class
 
   pages.forEach((elem) => {
-    if (url.includes(elem.id)) {
+   
+    if (elem?.id&& url.includes(elem.id)) {
       isHome = false;
-      elem.classList.add(activeClass);
+      elem?.classList.add(activeClass);
     }
   });
   if (isHome) {
-    homeLink.classList.add(activeClass);
+    homeLink?.classList.add(activeClass);
   }
 </script>

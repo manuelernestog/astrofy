@@ -1,11 +1,22 @@
 ---
 const { title, img, desc, url, badge, tags, target = '_blank' } = Astro.props;
+import {Picture} from '@astrojs/image/components'
+
 ---
 
 <div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]">
   <a href={url} target={target}>
     <div class="hero-content flex-col md:flex-row">
-      {img && <img src={img} alt={title} class="max-w-full md:max-w-[13rem] rounded-lg" />}
+      {img && 
+      <Picture 
+      src={img} 
+      aspectRatio="16:9"   
+            widths={[400, 800, 1200, 1800]} 
+            format={ "jpeg"}
+            sizes="(max-width: 1800px) 100vw, 1800px"
+      alt={title} 
+      class="max-w-full md:max-w-[13rem] rounded-lg" />
+      }
       <div class="grow w-full">
         <h1 class="text-xl font-bold">
           {title}

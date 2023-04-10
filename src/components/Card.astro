@@ -1,11 +1,21 @@
 ---
 const { title, img, desc, url, badge, tags, target = '_blank' } = Astro.props;
+import {Picture} from '@astrojs/image/components'
+
 ---
 
 <div class="md:w-1/3 w-full">
   <a href={url} target={target}>
     <div class="card bg-base-100 transition ease-in-out hover:shadow-xl mx-6 my-2 hover:scale-[102%]">
-      <figure><img src={img} alt="Shoes" /></figure>
+      <figure>
+        <Picture 
+        aspectRatio="16:9"   
+        widths={[400, 800, 1200, 1800]} 
+        format={ "jpeg"}
+        sizes="(max-width: 1800px) 100vw, 1800px"
+        src={img} 
+        alt="Shoes"  />
+      </figure>
       <div class="card-body">
         <h2 class="card-title">
           {title}
