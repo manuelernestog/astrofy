@@ -1,21 +1,25 @@
 ---
-const { title, img, desc, url, badge, tags, target = '_blank' } = Astro.props;
-import {Picture} from '@astrojs/image/components'
-
+const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
+import { Picture } from "@astrojs/image/components";
 ---
 
-<div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]">
+<div
+  class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
+>
   <a href={url} target={target}>
     <div class="hero-content flex-col md:flex-row">
-      {img && 
-      <Picture 
-      src={img} 
-      aspectRatio="16:9"   
-            widths={[400, 800, 1200, 1800]} 
-            format={ "jpeg"}
-            sizes="(max-width: 1800px) 100vw, 1800px"
-      alt={title} 
-      class="max-w-full md:max-w-[13rem] rounded-lg" />
+      {
+        img && (
+          <Picture
+            src={img}
+            aspectRatio="16:9"
+            widths={[1500, 2500]}
+            format={"webp"}
+            sizes="(max-width: 1500px) 100vw, 2500px"
+            alt={title}
+            class="max-w-full md:max-w-[13rem] rounded-lg"
+          />
+        )
       }
       <div class="grow w-full">
         <h1 class="text-xl font-bold">
@@ -24,7 +28,10 @@ import {Picture} from '@astrojs/image/components'
         </h1>
         <p class="py-1 text-1xl">{desc}</p>
         <div class="card-actions justify-end">
-          {tags && tags.map((tag) => <div class="badge badge-outline">{tag}</div>)}
+          {
+            tags &&
+              tags.map((tag) => <div class="badge badge-outline">{tag}</div>)
+          }
         </div>
       </div>
     </div>
