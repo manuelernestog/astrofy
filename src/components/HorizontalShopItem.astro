@@ -23,9 +23,9 @@ import { Picture } from "@astrojs/image/components";
       img && (
         <Picture
           aspectRatio="16:9"
-          widths={[1500, 2500]}
+          widths={[210, 400]}
           format={"webp"}
-          sizes="(max-width: 1500px) 100vw, 2500px"
+          sizes="(max-width: 750px) 100vw, 300px "
           src={img}
           alt={title}
           class="max-w-full md:max-w-[13rem] rounded-lg"

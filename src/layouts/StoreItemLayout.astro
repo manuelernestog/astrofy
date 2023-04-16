@@ -31,9 +31,9 @@ import { Picture } from "@astrojs/image/components";
         heroImage && (
           <Picture
             aspectRatio="16:9"
-            widths={[1500, 2500]}
+            widths={[350, 750]}
             format={"webp"}
-            sizes="(max-width: 1500px) 100vw, 2500px"
+            sizes="(max-width: 750px) 100vw, 750px"
             src={heroImage}
             alt={title}
             class="w-full mb-6"
