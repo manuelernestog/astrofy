@@ -13,26 +13,33 @@ const { page } = Astro.props;
 
 <BaseLayout title="Blog">
   <div class="mb-5">
-        <div class="text-3xl w-full font-bold">Blog</div>
+      <div class="text-3xl w-full font-bold">Blog</div>
     </div>
   
-  <ul>
-    {
-      page.data.map((post) => (
-        <>
-          <HorizontalCard
-            title={post.data.title}
-            img={post.data.heroImage}
-            desc={post.data.description}
-            url={"/blog/" + post.slug}
-            target="_self"
-            badge={post.data.badge}
-          />
-          <div class="divider my-0" />
-        </>
-      ))
-    }
-  </ul>
+  {       
+    page.data.length === 0 ? (
+      <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 w-full p-4" role="alert">
+        <p class="font-bold">Sorry!</p>
+        <p>There are no blog posts to show at the moment. Check back later!</p>
+      </div>
+    ) : (
+      <ul>
+        {page.data.map(post => (
+          <>
+            <HorizontalCard
+              title={post.data.title}
+              img={post.data.heroImage}
+              desc={post.data.description}
+              url={'/blog/' + post.slug}
+              target="_self"
+              badge={post.data.badge}
+            />
+            <div class="divider my-0" />
+          </>
+        ))}
+      </ul>
+    )
+  }
 
   <div class="flex justify-between">
     {
