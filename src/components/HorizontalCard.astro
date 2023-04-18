@@ -1,6 +1,6 @@
 ---
 const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
-import { Picture } from "@astrojs/image/components";
+import { Image } from "@astrojs/image/components";
 ---
 
 <div
@@ -10,10 +10,10 @@ import { Picture } from "@astrojs/image/components";
     <div class="hero-content flex-col md:flex-row">
       {
         img && (
-          <Picture
+          <Image
             src={img}
             aspectRatio="16:9"
-            widths={[210,400]}
+            width={416}
             format={"webp"}
             sizes="(max-width: 1500px) 100vw, 2500px"
             alt={title}
