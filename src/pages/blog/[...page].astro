@@ -13,24 +13,24 @@ const { page } = Astro.props;
 
 <BaseLayout title="Blog">
   <div class="mb-5">
-      <div class="text-3xl w-full font-bold">Blog</div>
-    </div>
-  
-  {       
+    <div class="text-3xl w-full font-bold">Blog</div>
+  </div>
+
+  {
     page.data.length === 0 ? (
-      <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 w-full p-4" role="alert">
+      <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
         <p class="font-bold">Sorry!</p>
         <p>There are no blog posts to show at the moment. Check back later!</p>
       </div>
     ) : (
       <ul>
-        {page.data.map(post => (
+        {page.data.map((post) => (
           <>
             <HorizontalCard
               title={post.data.title}
               img={post.data.heroImage}
               desc={post.data.description}
-              url={'/blog/' + post.slug}
+              url={"/blog/" + post.slug}
               target="_self"
               badge={post.data.badge}
             />
