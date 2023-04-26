@@ -125,7 +125,6 @@ This compoenet is already included in the Store layout of the template. In case 
   oldPricing="old_price"
   checkoutUrl="external store checkout url"
   badge="Optional badge"
-  details="true"
   url="item details url"
   custom_link="Custom link url"
   custom_link_label="Cutom link btn label"
