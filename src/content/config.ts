@@ -12,7 +12,6 @@ const blogSchema = z.object({
 const storeSchema = z.object({
     title: z.string(),
     description: z.string(),
-    details: z.boolean().optional(),
     custom_link_label: z.string(),
     custom_link: z.string().optional(),
     updatedDate: z.coerce.date(),

@@ -29,15 +29,7 @@ import { Image } from "@astrojs/image/components";
     <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
       {
         heroImage && (
-          <Image
-            aspectRatio="16:9"
-            width={750}
-            height={422}
-            format="webp"
-            src={heroImage}
-            alt={title}
-            class="w-full mb-6"
-          />
+          <Image aspectRatio="16:9" width={750} height={422} format="webp" src={heroImage} alt={title} class="w-full mb-6" />
         )
       }
       <div class="">
@@ -53,31 +45,15 @@ import { Image } from "@astrojs/image/components";
           <div>
             {
               custom_link && (
-                <a
-                  class="btn btn-outline grow md:grow-0 ml-4"
-                  href={custom_link}
-                  target="_blank"
-                >
+                <a class="btn btn-outline grow md:grow-0 ml-4" href={custom_link} target="_blank">
                   {custom_link_label}
                 </a>
               )
             }
-            <a
-              class="btn btn-primary grow md:grow-0 ml-4"
-              href={checkoutUrl}
-              target="_blank">Buy Now</a
-            >
+            <a class="btn btn-primary grow md:grow-0 ml-4" href={checkoutUrl} target="_blank">Buy Now</a>
           </div>
         </div>
       </div>
-      {
-        updatedDate && (
-          <div>
-            {" "}
-            Last updated on <time>{displayDate}</time>{" "}
-          </div>
-        )
-      }
       <div class="divider my-2"></div>
       <slot />
     </article>
