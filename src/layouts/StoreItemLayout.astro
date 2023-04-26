@@ -21,12 +21,25 @@ const {
 
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(updatedDate).format("ll");
+import { Image } from "@astrojs/image/components";
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}>
   <main class="md:flex md:justify-center">
     <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
-      {heroImage && <img src={heroImage} alt={title} class="w-full mb-6" />}
+      {
+        heroImage && (
+          <Image
+            aspectRatio="16:9"
+            width={1500}
+            height={750}
+            format={"webp"}
+            src={heroImage}
+            alt={title}
+            class="w-full mb-6"
+          />
+        )
+      }
       <div class="">
         <h1 class="title my-2 text-4xl font-bold">
           {title}
@@ -40,12 +53,20 @@ const displayDate = dayjs(updatedDate).format("ll");
           <div>
             {
               custom_link && (
-                <a class="btn btn-outline grow md:grow-0 ml-4" href={custom_link} target="_blank">
+                <a
+                  class="btn btn-outline grow md:grow-0 ml-4"
+                  href={custom_link}
+                  target="_blank"
+                >
                   {custom_link_label}
                 </a>
               )
             }
-            <a class="btn btn-primary grow md:grow-0 ml-4" href={checkoutUrl} target="_blank">Buy Now</a>
+            <a
+              class="btn btn-primary grow md:grow-0 ml-4"
+              href={checkoutUrl}
+              target="_blank">Buy Now</a
+            >
           </div>
         </div>
       </div>
