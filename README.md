@@ -98,8 +98,9 @@ The timeline components are used to conform the CV.
   <TimeLineElement
     title="Element Title"
     subtitle="Subtitle"
-    desc="Description"
-  />
+  >
+      Content that can contain <div>divs</div> and <span>anything else you want</span>.
+  </TimeLineElement>
   ...
 </div>
 ```
