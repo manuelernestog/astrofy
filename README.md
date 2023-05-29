@@ -28,7 +28,7 @@ npm run dev
 - [tailwindcss](https://tailwindcss.com/)
 - [DaisyUI](https://daisyui.com/)
 
-## Project Strucutre
+## Project Structure
 
 ```php
 ├── src/
