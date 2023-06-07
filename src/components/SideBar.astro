@@ -2,41 +2,42 @@
 import { Image } from "@astrojs/image/components";
 ---
 
-<div class="drawer-side bg-base-200">
-  <label for="my-drawer" class="drawer-overlay bg-base-200"></label>
-  <div
-    class="menu flex flex-col flex-nowrap p-4 overflow-y-auto w-[20rem] bg-base-200 text-base-content"
-  >
-    <div class="w-fit">
+<div class="drawer-side z-40">
+  <label for="my-drawer" class="drawer-overlay"></label>
+  <aside class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col">
+    <div class="w-fit mx-auto mt-5 mb-6">
       <a href="/">
-        <div
-          class="avatar transition ease-in-out w-1/2 hover:scale-[102%] block m-auto mt-3 mb-6 h-36"
-        >
-          <div>
-            <Image
-              class="mask mask-circle"
-              aspectRatio="1:1"
-              format="webp"
-              width={300}
-              height={300}
-              src="/profile.jpg"
-              alt="Profile image"
-            />
+        <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto">
+          <div class="rounded-full w-[8.5rem]">
+            <Image aspectRatio="1:1" format="webp" width={300} height={300} src="/profile.jpg" alt="Profile image" />
           </div>
         </div>
       </a>
     </div>
-    <ul class="grow shrink">
+    <ul class="menu grow shrink menu-md overflow-y-auto">
       <!-- Sidebar content here -->
-      <li><a id="home" href="/">Home</a></li>
-      <li><a id="projects" href="/projects">Projects</a></li>
-      <li><a id="services" href="/services">Services</a></li>
-      <li><a id="store" href="/store">Store</a></li>
-      <li><a id="blog" href="/blog/">Blog</a></li>
-      <li><a id="cv" href="/cv">CV</a></li>
-      <li><a href="mailto:contact.manuelernestog@gmail.com" target="_blank" referrerpolicy="no-referrer-when-downgrade">Contact</a></li>
+      <li><a class="py-3 text-base" id="home" href="/">Home</a></li>
+      <li><a class="py-3 text-base" id="projects" href="/projects">Projects</a></li>
+      <li><a class="py-3 text-base" id="services" href="/services">Services</a></li>
+      <li><a class="py-3 text-base" id="store" href="/store">Store</a></li>
+      <li><a class="py-3 text-base" id="blog" href="/blog/">Blog</a></li>
+      <li><a class="py-3 text-base" id="cv" href="/cv">CV</a></li>
+      <li>
+        <a
+          class="py-3 text-base"
+          href="mailto:contact.manuelernestog@gmail.com"
+          target="_blank"
+          referrerpolicy="no-referrer-when-downgrade">Contact</a
+        >
+      </li>
     </ul>
-    <div class="social-icons px-4 my-2 flex self-center">
+
+    <div
+      class="block sticky pointer-events-none bottom-9 bg-base-200 justify-center h-8 [mask-image:linear-gradient(transparent,#000000)]"
+    >
+    </div>
+
+    <div class="social-icons px-4 py-2 flex self-center justify-center sticky bottom-0 bg-base-200">
       <a
         href="https://manuelernestog.github.io/support-my-work/"
         target="_blank"
@@ -57,13 +58,7 @@ import { Image } from "@astrojs/image/components";
           ></path></svg
         >
       </a>
-      <a
-        href="https://github.com/manuelernestog"
-        target="_blank"
-        class="mx-3"
-        aria-label="Github"
-        title="Github"
-      >
+      <a href="https://github.com/manuelernestog" target="_blank" class="mx-3" aria-label="Github" title="Github">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -77,13 +72,7 @@ import { Image } from "@astrojs/image/components";
           ></path>
         </svg>
       </a>
-      <a
-        href="https://twitter.com/manuelernestog"
-        target="_blank"
-        class="mx-3"
-        aria-label="Twitter"
-        title="Twitter"
-      >
+      <a href="https://twitter.com/manuelernestog" target="_blank" class="mx-3" aria-label="Twitter" title="Twitter">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -114,28 +103,19 @@ import { Image } from "@astrojs/image/components";
         </svg>
       </a>
 
-      <a
-        href="/rss.xml"
-        target="_blank"
-        class="mx-3"
-        aria-label="RSS Feed"
-        title="RSS Feed"
-      >
+      <a href="/rss.xml" target="_blank" class="mx-3" aria-label="RSS Feed" title="RSS Feed">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
           viewBox="0 0 24 24"
           style="fill: currentColor;transform: ;msFilter:;"
-          ><path
-            d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z"
-          ></path><path
-            d="M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z"
-          ></path><circle cx="6" cy="18" r="2"></circle>
+          ><path d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z"></path><path
+            d="M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z"></path><circle cx="6" cy="18" r="2"></circle>
         </svg>
       </a>
     </div>
-  </div>
+  </aside>
 </div>
 <script>
   const homeLink = document.getElementById("home");
