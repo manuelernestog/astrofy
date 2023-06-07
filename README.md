@@ -1,8 +1,8 @@
-# Astro Modern Personal Website
+# Astrofy | Personal Porfolio Website Template
 
 ![Astro Modern Personal Website](public/social_img.png)
 
-Modern Personal Website Template with Project Section, CV Section, Paginated Blog, RSS Feed, SEO Friendly, Visual themes and Responsive Desing for Astro framework.
+Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes your website with a Project Section, CV, Store, Blog, RSS Feed and 29 Visual themes.
 
 ## Demo
 
@@ -248,7 +248,7 @@ Please be wary of working on issues _not_ marked as `accepted`. Just because som
 
 ## License
 
-Astro Modern Personal Website is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astro-modern-personal-website/blob/main/LICENSE) file for details.
+Astrofy is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astro-modern-personal-website/blob/main/LICENSE) file for details.
 
 ## Contributors
 
