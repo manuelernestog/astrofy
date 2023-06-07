@@ -1,6 +1,6 @@
 {
-  "name": "Astro Modern Personal Website",
-  "description": "Astro Modern personal website template with Project Section, CV Section, Paginated Blog, Shop, RSS Feed, SEO Friendly, Visual themes and Responsive Desing.",
+  "name": "astrofy",
+  "description": "Astrofy is free and open-source template for your Personal Portfolio Website. Built with Astro and TailwindCSS create in minutes a website with Project Section, CV Section, Blog, Shop, RSS Feed, SEO Friendly, Responsive Desing and 29 Visual themes.",
   "type": "module",
   "version": "2.3.1",
   "private": true,
