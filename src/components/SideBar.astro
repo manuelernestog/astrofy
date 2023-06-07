@@ -11,8 +11,8 @@ const { sideBarActiveItemID } = Astro.props;
     <div class="w-fit mx-auto mt-5 mb-6">
       <a href="/">
         <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto">
-          <div class="rounded-full w-[8.5rem]">
-            <Image aspectRatio="1:1" format="webp" width={300} height={300} src="/profile.jpg" alt="Profile image" />
+          <div class="w-[8.5rem]">
+            <Image class="mask mask-circle" aspectRatio="1:1" format="webp" width={300} height={300} src="/profile.jpg" alt="Profile image" />
           </div>
         </div>
       </a>
