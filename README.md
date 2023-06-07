@@ -39,8 +39,10 @@ npm run dev
 │   │   ├── Card.astro
 │   │   ├── Footer.astro
 │   │   ├── Header.astro
-│   │   └── HorizontalCard.jsx
-│   │   └── SideBar.jsx
+│   │   └── HorizontalCard.astro
+│   │   └── SideBar.astro
+│   │   └── SideBarMenu.astro
+│   │   └── SideBarFooter.astro
 │   ├── content/
 │   │   ├── blog/
 │   │   │   ├── post1.md
@@ -81,13 +83,20 @@ The `BaseHead`, `Footer`, `Header` and `SideBar` components are already included
 
 ##### SideBar
 
-In the Sidebar you can change the links to all your website pages.
+In the Sidebar you can change your profilePicture, links to all your website pages and your social icons.
 
 You can change your avatar shape using [mask classes](https://daisyui.com/components/mask/).
 
-The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack.
+The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack. You can replace the icons in the `SideBarFooter` component
 
-**Note**: In order to change the sidebar menu's active item style, look for the `activeClass` constant and change its value to your desired style (e.g. `active` for the primary colour).
+To add a new page in the sidebar go to `SideBarMenu` component.
+
+```
+<li><a class="py-3 text-base" id="home" href="/">Home</a></li>
+    
+```
+
+**Note**: In order to change the sidebar menu's active item, you need to setup the prop `sideBarActiveItemID` in the `BaseLayout` componenet of your new page and add that id to the link in the `SideBarMenu`
 
 #### TimeLine
 
