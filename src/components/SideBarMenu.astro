@@ -1,9 +1,9 @@
 ---
 const { sideBarActiveItemID } = Astro.props;
+const activeClass = "bg-base-300"; // For primary color replace with `active` class
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
-    <!-- Sidebar content here -->
     <li><a class="py-3 text-base" id="home" href="/">Home</a></li>
     <li><a class="py-3 text-base" id="projects" href="/projects">Projects</a></li>
     <li><a class="py-3 text-base" id="services" href="/services">Services</a></li>
@@ -20,8 +20,7 @@ const { sideBarActiveItemID } = Astro.props;
     </li>
 </ul>
 
-<script define:vars={{ sideBarActiveItemID: sideBarActiveItemID }}>
+<script define:vars={{ sideBarActiveItemID: sideBarActiveItemID, activeClass: activeClass }}>
 const activeItemElem = document.getElementById(sideBarActiveItemID);
-const activeClass = "bg-base-300"; // For primary color replace with `active` class
 activeItemElem.classList.add(activeClass);
 </script>
