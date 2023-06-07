@@ -1,5 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
+import SideBarMenu from "./SideBarMenu.astro";
+const { sideBarActiveItemID } = Astro.props;
 ---
 
 <div class="drawer-side z-40">
@@ -14,30 +16,13 @@ import { Image } from "@astrojs/image/components";
         </div>
       </a>
     </div>
-    <ul class="menu grow shrink menu-md overflow-y-auto">
-      <!-- Sidebar content here -->
-      <li><a class="py-3 text-base" id="home" href="/">Home</a></li>
-      <li><a class="py-3 text-base" id="projects" href="/projects">Projects</a></li>
-      <li><a class="py-3 text-base" id="services" href="/services">Services</a></li>
-      <li><a class="py-3 text-base" id="store" href="/store">Store</a></li>
-      <li><a class="py-3 text-base" id="blog" href="/blog/">Blog</a></li>
-      <li><a class="py-3 text-base" id="cv" href="/cv">CV</a></li>
-      <li>
-        <a
-          class="py-3 text-base"
-          href="mailto:contact.manuelernestog@gmail.com"
-          target="_blank"
-          referrerpolicy="no-referrer-when-downgrade">Contact</a
-        >
-      </li>
-    </ul>
-
+    <SideBarMenu sideBarActiveItemID={sideBarActiveItemID} />
     <div
-      class="block sticky pointer-events-none bottom-9 bg-base-200 justify-center h-12 [mask-image:linear-gradient(transparent,#000000)]"
+      class="block sticky pointer-events-none bottom-10 bg-base-200 justify-center h-12 [mask-image:linear-gradient(transparent,#000000)]"
     >
     </div>
 
-    <div class="social-icons px-4 pb-3 pt-1 flex self-center justify-center sticky bottom-0 bg-base-200">
+    <div class="social-icons px-4 pb-5 pt-1 flex self-center justify-center sticky bottom-0 bg-base-200">
       <a
         href="https://manuelernestog.github.io/support-my-work/"
         target="_blank"
@@ -117,30 +102,3 @@ import { Image } from "@astrojs/image/components";
     </div>
   </aside>
 </div>
-
-<script>
-  const homeLink = document.getElementById("home");
-  const projectsLink = document.getElementById("projects");
-  const servicesLink = document.getElementById("services");
-  const storeLink = document.getElementById("store");
-  const blogLink = document.getElementById("blog");
-  const cvLink = document.getElementById("cv");
-
-  var isHome = true;
-
-  const url = window.location.href;
-
-  const pages = [projectsLink, servicesLink, storeLink, blogLink, cvLink];
-
-  const activeClass = "bg-base-300"; // For primary color replace with `active` class
-
-  pages.forEach((elem) => {
-    if (elem?.id && url.includes(elem.id)) {
-      isHome = false;
-      elem?.classList.add(activeClass);
-    }
-  });
-  if (isHome) {
-    homeLink?.classList.add(activeClass);
-  }
-</script>
