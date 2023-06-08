@@ -1,5 +1,5 @@
 ---
-const { title, subtitle, desc } = Astro.props;
+const { title, subtitle } = Astro.props;
 ---
 
 <div class="flex">
@@ -11,7 +11,7 @@ const { title, subtitle, desc } = Astro.props;
     <h3 class="font-semibold mb-1">{title}</h3>
     <span class="font-light text-sm">{subtitle}</span>
     <p class="my-2 text-justify">
-      {desc}
+      <slot />
     </p>
   </div>
 </div>

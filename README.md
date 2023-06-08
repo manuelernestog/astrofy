@@ -1,8 +1,8 @@
-# Astro Modern Personal Website
+# Astrofy | Personal Porfolio Website Template
 
 ![Astro Modern Personal Website](public/social_img.png)
 
-Modern Personal Website Template with Project Section, CV Section, Paginated Blog, RSS Feed, SEO Friendly, Visual themes and Responsive Desing for Astro framework.
+Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed.
 
 ## Demo
 
@@ -28,7 +28,7 @@ npm run dev
 - [tailwindcss](https://tailwindcss.com/)
 - [DaisyUI](https://daisyui.com/)
 
-## Project Strucutre
+## Project Structure
 
 ```php
 ├── src/
@@ -39,8 +39,10 @@ npm run dev
 │   │   ├── Card.astro
 │   │   ├── Footer.astro
 │   │   ├── Header.astro
-│   │   └── HorizontalCard.jsx
-│   │   └── SideBar.jsx
+│   │   └── HorizontalCard.astro
+│   │   └── SideBar.astro
+│   │   └── SideBarMenu.astro
+│   │   └── SideBarFooter.astro
 │   ├── content/
 │   │   ├── blog/
 │   │   │   ├── post1.md
@@ -81,13 +83,20 @@ The `BaseHead`, `Footer`, `Header` and `SideBar` components are already included
 
 ##### SideBar
 
-In the Sidebar you can change the links to all your website pages.
+In the Sidebar you can change your profilePicture, links to all your website pages and your social icons.
 
 You can change your avatar shape using [mask classes](https://daisyui.com/components/mask/).
 
-The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack.
+The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack. You can replace the icons in the `SideBarFooter` component
 
-**Note**: In order to change the sidebar menu's active item style, look for the `activeClass` constant and change its value to your desired style (e.g. `active` for the primary colour).
+To add a new page in the sidebar go to `SideBarMenu` component.
+
+```
+<li><a class="py-3 text-base" id="home" href="/">Home</a></li>
+    
+```
+
+**Note**: In order to change the sidebar menu's active item, you need to setup the prop `sideBarActiveItemID` in the `BaseLayout` componenet of your new page and add that id to the link in the `SideBarMenu`
 
 #### TimeLine
 
@@ -98,8 +107,9 @@ The timeline components are used to conform the CV.
   <TimeLineElement
     title="Element Title"
     subtitle="Subtitle"
-    desc="Description"
-  />
+  >
+      Content that can contain <div>divs</div> and <span>anything else you want</span>.
+  </TimeLineElement>
   ...
 </div>
 ```
@@ -238,7 +248,7 @@ Please be wary of working on issues _not_ marked as `accepted`. Just because som
 
 ## License
 
-Astro Modern Personal Website is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astro-modern-personal-website/blob/main/LICENSE) file for details.
+Astrofy is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astro-modern-personal-website/blob/main/LICENSE) file for details.
 
 ## Contributors
 
