@@ -2,7 +2,7 @@
 
 ![Astro Modern Personal Website](public/social_img.png)
 
-Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes your website with a Project Section, CV, Store, Blog, RSS Feed and 29 Visual themes.
+Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed.
 
 ## Demo
 
