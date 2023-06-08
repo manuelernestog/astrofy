@@ -1,12 +1,12 @@
 # Astrofy | Personal Porfolio Website Template
 
-![Astro Modern Personal Website](public/social_img.png)
+![Astrofy | Personal Porfolio Website Template](public/social_img.png)
 
 Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed.
 
 ## Demo
 
-View a live demo of the [Astro Modern Personal Website](https://astro-modern-personal-website.netlify.app/)
+View a live demo of [Astrofy](https://astrofy.netlify.app/)
 
 ## Installation
 
@@ -242,18 +242,18 @@ The configuration for the deployment varies depending on the platform where you 
 
 Suggestions and pull requests are welcomed! Feel free to open a discussion or an issue for a new feature request or bug.
 
-One of the best ways of contribute is to grab a [bug report or feature suggestion](https://github.com/manuelernestog/astro-modern-personal-website/issues) that has been marked `accepted` and dig in.
+One of the best ways of contribute is to grab a [bug report or feature suggestion](https://github.com/manuelernestog/astrofy/issues) that has been marked `accepted` and dig in.
 
 Please be wary of working on issues _not_ marked as `accepted`. Just because someone has created an issue doesn't mean we'll accept a pull request for it.
 
 ## License
 
-Astrofy is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astro-modern-personal-website/blob/main/LICENSE) file for details.
+Astrofy is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astrofy/blob/main/LICENSE) file for details.
 
 ## Contributors
 
-<a href="https://github.com/manuelernestog/astro-modern-personal-website/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=manuelernestog/astro-modern-personal-website" />
+<a href="https://github.com/manuelernestog/astrofy/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=manuelernestog/astrofy" />
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
