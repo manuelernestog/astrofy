@@ -1,12 +1,12 @@
-# Astro Modern Personal Website
+# Astrofy | Personal Porfolio Website Template
 
-![Astro Modern Personal Website](public/social_img.png)
+![Astrofy | Personal Porfolio Website Template](public/social_img.png)
 
-Modern Personal Website Template with Project Section, CV Section, Paginated Blog, RSS Feed, SEO Friendly, Visual themes and Responsive Design for Astro framework.
+Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed.
 
 ## Demo
 
-View a live demo of the [Astro Modern Personal Website](https://astro-modern-personal-website.netlify.app/)
+View a live demo of [Astrofy](https://astrofy.astrofy-template.app/)
 
 ## Installation
 
@@ -39,8 +39,10 @@ npm run dev
 │   │   ├── Card.astro
 │   │   ├── Footer.astro
 │   │   ├── Header.astro
-│   │   └── HorizontalCard.jsx
-│   │   └── SideBar.jsx
+│   │   └── HorizontalCard.astro
+│   │   └── SideBar.astro
+│   │   └── SideBarMenu.astro
+│   │   └── SideBarFooter.astro
 │   ├── content/
 │   │   ├── blog/
 │   │   │   ├── post1.md
@@ -77,17 +79,24 @@ npm run dev
 
 #### Layout Components
 
-The `BaseHead`, `Footer`, `Header` and `SideBar` components are already included in the layout sistem. To change the website content you can edit the content of this components.
+The `BaseHead`, `Footer`, `Header` and `SideBar` components are already included in the layout system. To change the website content you can edit the content of this components.
 
 ##### SideBar
 
-In the Sidebar you can change the links to all your website pages.
+In the Sidebar you can change your profilePicture, links to all your website pages and your social icons.
 
 You can change your avatar shape using [mask classes](https://daisyui.com/components/mask/).
 
-The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack.
+The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack. You can replace the icons in the `SideBarFooter` component
 
-**Note**: In order to change the sidebar menu's active item style, look for the `activeClass` constant and change its value to your desired style (e.g. `active` for the primary colour).
+To add a new page in the sidebar go to `SideBarMenu` component.
+
+```
+<li><a class="py-3 text-base" id="home" href="/">Home</a></li>
+
+```
+
+**Note**: In order to change the sidebar menu's active item, you need to setup the prop `sideBarActiveItemID` in the `BaseLayout` componenet of your new page and add that id to the link in the `SideBarMenu`
 
 #### TimeLine
 
@@ -95,11 +104,10 @@ The timeline components are used to conform the CV.
 
 ```html
 <div class="time-line-container">
-  <TimeLineElement
-    title="Element Title"
-    subtitle="Subtitle"
-  >
-      Content that can contain <div>divs</div> and <span>anything else you want</span>.
+  <TimeLineElement title="Element Title" subtitle="Subtitle">
+    Content that can contain
+    <div>divs</div>
+    and <span>anything else you want</span>.
   </TimeLineElement>
   ...
 </div>
@@ -233,18 +241,18 @@ The configuration for the deployment varies depending on the platform where you 
 
 Suggestions and pull requests are welcomed! Feel free to open a discussion or an issue for a new feature request or bug.
 
-One of the best ways of contribute is to grab a [bug report or feature suggestion](https://github.com/manuelernestog/astro-modern-personal-website/issues) that has been marked `accepted` and dig in.
+One of the best ways of contribute is to grab a [bug report or feature suggestion](https://github.com/manuelernestog/astrofy/issues) that has been marked `accepted` and dig in.
 
 Please be wary of working on issues _not_ marked as `accepted`. Just because someone has created an issue doesn't mean we'll accept a pull request for it.
 
 ## License
 
-Astro Modern Personal Website is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astro-modern-personal-website/blob/main/LICENSE) file for details.
+Astrofy is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astrofy/blob/main/LICENSE) file for details.
 
 ## Contributors
 
-<a href="https://github.com/manuelernestog/astro-modern-personal-website/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=manuelernestog/astro-modern-personal-website" />
+<a href="https://github.com/manuelernestog/astrofy/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=manuelernestog/astrofy" />
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
