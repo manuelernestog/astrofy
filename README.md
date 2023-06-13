@@ -6,7 +6,7 @@ Astrofy is a free and open-source template for your Personal Portfolio Website b
 
 ## Demo
 
-View a live demo of [Astrofy](https://astrofy.astrofy-template.app/)
+View a live demo of [Astrofy](https://astrofy-template.netlify.app/)
 
 ## Installation
 
@@ -93,7 +93,7 @@ To add a new page in the sidebar go to `SideBarMenu` component.
 
 ```
 <li><a class="py-3 text-base" id="home" href="/">Home</a></li>
-    
+
 ```
 
 **Note**: In order to change the sidebar menu's active item, you need to setup the prop `sideBarActiveItemID` in the `BaseLayout` componenet of your new page and add that id to the link in the `SideBarMenu`
@@ -104,11 +104,10 @@ The timeline components are used to conform the CV.
 
 ```html
 <div class="time-line-container">
-  <TimeLineElement
-    title="Element Title"
-    subtitle="Subtitle"
-  >
-      Content that can contain <div>divs</div> and <span>anything else you want</span>.
+  <TimeLineElement title="Element Title" subtitle="Subtitle">
+    Content that can contain
+    <div>divs</div>
+    and <span>anything else you want</span>.
   </TimeLineElement>
   ...
 </div>
