@@ -33,7 +33,7 @@ npm run dev
 ```php
 ├── src/
 │   ├── components/
-│   │   ├── cs/
+│   │   ├── cv/
 │   │   │   ├── TimeLine
 │   │   ├── BaseHead.astro
 │   │   ├── Card.astro
