@@ -2,8 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
+import postImageSrc from "../images/post_img.webp?url";
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+console.log(postImageSrc, "postImageSrc");
 
 const last_posts = posts.slice(0, 3);
 ---
@@ -15,21 +20,24 @@ const last_posts = posts.slice(0, 3);
     <div class="text-3xl py-3 font-bold">Future Frontend Developer</div>
     <div class="py-2">
       <text class="text-lg">
-       Maybe there are should be informatiom about <b>Me 🧑‍💻</b>, my work experience and education, but you can see it a little bit later!
+        Maybe there are should be informatiom about <b>Me 🧑‍💻</b>, my work
+        experience and education, but you can see it a little bit later!
       </text>
     </div>
     <div class="mt-8">
-      <a class="btn" href="mailto:itefimenko@gmail.com"" target="_blank"> Let's connect!</a> 
+      <a class="btn" href="mailto:itefimenko@gmail.com" " target="_blank">
+        Let's connect!</a
+      >
     </div>
   </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-2"> My Projects </div>
+    <div class="text-3xl w-full font-bold mb-2">My Projects</div>
   </div>
 
   <HorizontalCard
     title="Demo Project 1"
-    img="/post_img.webp"
+    img={postImageSrc}
     desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     url="#"
     badge="NEW"

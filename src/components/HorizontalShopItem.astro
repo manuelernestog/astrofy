@@ -12,16 +12,17 @@ const {
   custom_link = false,
   custom_link_label = "",
 } = Astro.props;
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 ---
 
-<div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]">
+<div
+  class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
+>
   <a href={url}>
     <div class="hero-content flex-col md:flex-row">
       {
         img && (
           <Image
-            aspectRatio="16:9"
             width={750}
             format="webp"
             src={img}

@@ -1,18 +1,29 @@
 ---
 import SideBarFooter from "./SideBarFooter.astro";
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import SideBarMenu from "./SideBarMenu.astro";
 const { sideBarActiveItemID } = Astro.props;
 ---
 
 <div class="drawer-side z-40">
   <label for="my-drawer" class="drawer-overlay"></label>
-  <aside class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col">
+  <aside
+    class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col"
+  >
     <div class="w-fit mx-auto mt-5 mb-6">
       <a href="/">
-        <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto">
+        <div
+          class="avatar transition ease-in-out hover:scale-[102%] block m-auto"
+        >
           <div class="w-[8.5rem]">
-            <Image class="mask mask-circle" aspectRatio="1:1" format="webp" width={350} height={350} src="/profile22.jpg" alt="Profile image" />
+            <Image
+              class="mask mask-circle"
+              format="webp"
+              width={350}
+              height={350}
+              src="/profile22.jpg"
+              alt="Profile image"
+            />
           </div>
         </div>
       </a>

@@ -1,6 +1,8 @@
 ---
 const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
+
+console.log(img, "img");
 ---
 
 <div
@@ -12,8 +14,8 @@ import { Image } from "@astrojs/image/components";
         img && (
           <Image
             src={img}
-            aspectRatio="16:9"
             width={750}
+            height={200}
             format="webp"
             alt={title}
             class="max-w-full md:max-w-[13rem] rounded-lg"
