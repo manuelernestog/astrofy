@@ -1,6 +1,7 @@
 ---
 const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
 import { Image } from "@astrojs/image/components";
+const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 ---
 
 <div
@@ -29,7 +30,11 @@ import { Image } from "@astrojs/image/components";
         <div class="card-actions justify-end">
           {
             tags &&
-              tags.map((tag) => <div class="badge badge-outline">{tag}</div>)
+              tags.map((tag) => (
+                <a href={`${tag_url}/${tag}`} class="badge badge-outline">
+                  {tag}
+                </a>
+              ))
           }
         </div>
       </div>
