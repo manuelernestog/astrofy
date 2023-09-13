@@ -20,7 +20,7 @@
     "astro": "^2.7.3",
     "daisyui": "^3.1.7",
     "dayjs": "^1.11.9",
-    "sharp": "^0.32.1"
+    "sharp": "^0.32.5"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9"
