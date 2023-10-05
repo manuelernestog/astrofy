@@ -1,6 +1,6 @@
 ---
 const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 ---
 
@@ -13,8 +13,8 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
         img && (
           <Image
             src={img}
-            aspectRatio="16:9"
             width={750}
+            height={422}
             format="webp"
             alt={title}
             class="max-w-full md:max-w-[13rem] rounded-lg"
