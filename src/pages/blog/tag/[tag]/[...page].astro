@@ -24,7 +24,7 @@ const { page } = Astro.props;
 const params = Astro.params;
 ---
 
-<BaseLayout title="Blog" sideBarActiveItemID="blog">
+<BaseLayout title={"Blog - " + params.tag} sideBarActiveItemID="blog">
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Blog - {params.tag}</div>
   </div>
