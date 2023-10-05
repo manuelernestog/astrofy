@@ -6,10 +6,11 @@ import createSlug from '../../lib/createSlug'
 
 export async function getStaticPaths() {
     const postEntries = await getCollection('blog');
-    return postEntries.map(entry => ( { 
+    return postEntries.map(entry => ( {
         // Switch commented code in ...page and ...slug to turn off auto slug generation
-        // params: { slug: entry.slug }, props: { entry },
-        params: { slug: createSlug(entry.data.title) }, props: { entry },
+        // params: { slug: entry.slug },
+        params: { slug: createSlug(entry.data.title) },
+        props: { entry },
     } ));
 }
 
