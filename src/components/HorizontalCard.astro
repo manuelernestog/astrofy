@@ -1,6 +1,7 @@
 ---
 const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
+const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 ---
 
 <div
@@ -12,8 +13,8 @@ import { Image } from "@astrojs/image/components";
         img && (
           <Image
             src={img}
-            aspectRatio="16:9"
             width={750}
+            height={422}
             format="webp"
             alt={title}
             class="max-w-full md:max-w-[13rem] rounded-lg"
@@ -29,7 +30,11 @@ import { Image } from "@astrojs/image/components";
         <div class="card-actions justify-end">
           {
             tags &&
-              tags.map((tag) => <div class="badge badge-outline">{tag}</div>)
+              tags.map((tag) => (
+                <a href={`${tag_url}/${tag}`} class="badge badge-outline">
+                  {tag}
+                </a>
+              ))
           }
         </div>
       </div>
