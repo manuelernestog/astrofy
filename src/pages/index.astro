@@ -67,9 +67,7 @@ const last_posts = posts.slice(0, 3);
           title={post.data.title}
           img={post.data.heroImage}
           desc={post.data.description}
-          // Switch commented code in ...page and ...slug to turn off auto slug generation
-          // url={"/blog/" + post.slug}
-          url={"/blog/" + createSlug(post.data.title)}
+          url={"/blog/" + createSlug(post.data.title, post.slug)}
           target="_self"
           badge={post.data.badge}
         />

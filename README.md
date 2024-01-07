@@ -62,8 +62,9 @@ npm run dev
 │   │   └── index.astro
 │   │   └── projects.astro
 │   │   └── rss.xml.js
-│   └── styles/
-│       └── global.css
+│   ├── styles/
+│   │   └── global.css
+│   └── config.ts
 ├── public/
 │   ├── favicon.svg
 │   └── social-image.png
@@ -74,6 +75,14 @@ npm run dev
 ├── package.json
 └── tsconfig.json
 ```
+
+### Site config
+
+You can change global site configuration on '/src/config.ts' file:
+
+- **SITE_TITLE**: Default pages title.
+- **SITE_DESCRIPTION**: Default pages title.
+- **GENERATE_SLUG_FROM_TITLE**: By default Astrofy will generate the blog slug pages base on the article name. Set this var to false if you want to use the Astro file base (Compatible with Astrofy older versions).
 
 ### Components usage
 
