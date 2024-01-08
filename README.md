@@ -67,8 +67,7 @@ pnpm run dev
 │   └── config.ts
 ├── public/
 │   ├── favicon.svg
-│   └── social-image.png
-│   └── sprofile.jpg
+│   └── profile.webp
 │   └── social_img.webp
 ├── astro.config.mjs
 ├── tailwind.config.cjs
