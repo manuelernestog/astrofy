@@ -550,7 +550,10 @@
             </div>
           </div>
         </div>
-        <a class="outline-base-content overflow-hidden rounded-lg mt-3" href="https://daisyui.com/theme-generator/" target="_blank"
+        <a
+          class="outline-base-content overflow-hidden rounded-lg mt-3"
+          href="https://daisyui.com/theme-generator/"
+          target="_blank"
           ><div class="hover:bg-neutral hover:text-neutral-content w-full cursor-pointer font-sans">
             <div class="flex gap-2 p-3">
               <svg
@@ -583,31 +586,43 @@
             </div>
           </div></a
         >
-
-
       </div>
     </div>
   </div>
 </div>
 
-<script>
-  const theme_selectors = document.querySelectorAll("#theme-selector div[data-theme]");
-  const theme = window.localStorage.getItem("data-theme");
+<script is:inline>
+  function setTheme(doc) {
+    const theme_selectors = doc.querySelectorAll("#theme-selector div[data-theme]");
+    const theme = window.localStorage.getItem("data-theme");
 
-  if (theme) {
-    updateTheme(theme);
-  } else {
-    updateTheme("lofi");
+    if (theme) {
+      updateTheme(doc, theme);
+    } else {
+      updateTheme(doc, "lofi");
+    }
   }
 
-  theme_selectors.forEach((selector) => {
-    selector.addEventListener("click", () => {
-      updateTheme(selector.getAttribute("data-theme"));
-    });
-  });
-
-  function updateTheme(newTheme) {
-    document.querySelector("html").setAttribute("data-theme", newTheme);
+  function updateTheme(doc, newTheme) {
+    doc.querySelector("html").setAttribute("data-theme", newTheme);
     window.localStorage.setItem("data-theme", newTheme);
   }
+
+  function changeThemeBehavior(doc) {
+    const theme_selectors = doc.querySelectorAll("#theme-selector div[data-theme]");
+    theme_selectors.forEach((selector) => {
+      selector.addEventListener("click", () => {
+        updateTheme(doc, selector.getAttribute("data-theme"));
+      });
+    });
+  }
+
+  setTheme(document);
+  changeThemeBehavior(document);
+
+  document.addEventListener("astro:before-swap", (ev) => {
+    setTheme(ev.newDocument);
+  });
+
+  document.addEventListener("astro:after-swap", () => changeThemeBehavior(document));
 </script>
