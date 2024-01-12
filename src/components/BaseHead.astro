@@ -11,6 +11,8 @@ export interface Props {
 }
 
 const { title, description, image = '/social_img.webp', ogType = 'website' } = Astro.props;
+
+import { AstroFont } from 'astro-font'
 ---
 
 <!-- Global Metadata -->
@@ -37,3 +39,17 @@ const { title, description, image = '/social_img.webp', ogType = 'website' } = A
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<AstroFont
+	config={[
+		{
+			src: [],
+			name: "Poppins",
+			preload: true,
+			display: "swap",
+			selector: "body",
+			fallback: "sans-serif",
+			googleFontsURL: 'https://fonts.googleapis.com/css2?family=Poppins&display=swap',
+		},
+	]}
+/>
