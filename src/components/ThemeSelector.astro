@@ -1,0 +1,158 @@
+---
+
+const themes = [
+      "light",
+      "dark",
+      "cupcake",
+      "bumblebee",
+      "emerald",
+      "corporate",
+      "synthwave",
+      "retro",
+      "cyberpunk",
+      "valentine",
+      "halloween",
+      "garden",
+      "forest",
+      "aqua",
+      "lofi",
+      "pastel",
+      "fantasy",
+      "wireframe",
+      "black",
+      "luxury",
+      "dracula",
+      "cmyk",
+      "autumn",
+      "business",
+      "acid",
+      "lemonade",
+      "night",
+      "coffee",
+      "winter",
+      "dim",
+      "nord",
+      "sunset",
+    ];
+---
+
+<div title="Change Theme" class="dropdown dropdown-end" id="theme-selector">
+    <div tabindex="0" class="btn gap-1 normal-case btn-ghost">
+        <svg
+        width="20"
+        height="20"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        class="inline-block h-5 w-5 stroke-current md:h-6 md:w-6"
+        fill="oklch(var(--b1))"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+        />
+      </svg>
+        <span class="hidden xl:inline">Theme</span>
+        <svg
+            width="12px"
+            height="12px"
+            class="ml-1 h-3 w-3 fill-current opacity-60 sm:inline-block"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 2048 2048"
+            ><path
+                d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"
+            ></path>
+        </svg>
+    </div>
+    <div
+        class="dropdown-content bg-base-200 text-base-content rounded-t-box rounded-b-box top-px max-h-48 h-[70vh] w-52 overflow-y-auto shadow-2xl mt-16"
+    >
+        <div class="grid grid-cols-1 gap-3 p-3" tabindex="0">
+            {
+                themes.map((theme) => (
+                    <div
+                        class="outline-base-content overflow-hidden rounded-lg outline-2 outline-offset-2"
+                        data-set-theme={theme}
+                        data-act-class="outline"
+                    >
+                        <div
+                            data-theme={theme}
+                            class="bg-base-100 text-base-content w-full cursor-pointer font-sans"
+                        >
+                            <div class="grid grid-cols-5 grid-rows-3">
+                                <div class="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4">
+                                    <div class="flex-grow text-sm">
+                                        {theme}
+                                    </div>
+                                    <div class="flex flex-shrink-0 flex-wrap gap-1">
+                                        <div class="bg-primary w-2 rounded" />
+                                        <div class="bg-secondary w-2 rounded" />
+                                        <div class="bg-accent w-2 rounded" />
+                                        <div class="bg-neutral w-2 rounded" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    function getSavedTheme() {
+        return window.localStorage.getItem("data-theme") || "lofi";
+    }
+
+    function applyOutlineClass(doc, theme) {
+        const themeDivs = doc.querySelectorAll(
+            "#theme-selector div[data-set-theme]",
+        );
+        themeDivs.forEach((div) => {
+            if (div.dataset.setTheme === theme) {
+                div.classList.add("outline");
+            } else {
+                div.classList.remove("outline");
+            }
+        });
+    }
+
+    function setTheme(doc) {
+        const theme = getSavedTheme();
+        updateTheme(doc, theme);
+        applyOutlineClass(doc, theme);
+    }
+
+    function updateTheme(doc, newTheme) {
+        doc.querySelector("html").setAttribute("data-theme", newTheme);
+        window.localStorage.setItem("data-theme", newTheme);
+    }
+
+    function changeThemeBehavior(doc) {
+        const theme_selectors = doc.querySelectorAll(
+            "#theme-selector div[data-theme]",
+        );
+        theme_selectors.forEach((selector) => {
+            selector.addEventListener("click", () => {
+                const selectedTheme = selector.getAttribute("data-theme");
+                updateTheme(doc, selectedTheme);
+                applyOutlineClass(doc, selectedTheme);
+            });
+        });
+    }
+
+    setTheme(document);
+    changeThemeBehavior(document);
+
+    document.addEventListener("astro:before-swap", (ev) => {
+        setTheme(ev.newDocument);
+    });
+
+    document.addEventListener("astro:after-swap", () =>
+        changeThemeBehavior(document),
+    );
+</script>
