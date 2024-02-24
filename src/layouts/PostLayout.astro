@@ -40,4 +40,24 @@ import { Image } from "astro:assets";
       <slot />
     </article>
   </main>
+  <div id="waline"></div>
+  <script type="module">
+    import { init } from "https://unpkg.com/@waline/client@v3/dist/waline.js";
+
+    init({
+      el: "#waline",
+      lang: 'en',                                  // The language of the comment system
+      serverURL: "https://waline.saroprock.com",   // This is my own serverURL, please remind the user to change it
+      dark: false,                                 // Night and day modes, please adapt to them yourself
+      reaction: [                                  // This is my own expression, please remind the user to change it. If you want to use the default expression, please enter "true"
+        "https://saroprock.s3.bitiful.net/good.png",
+        "https://saroprock.s3.bitiful.net/bad.png",
+        "https://saroprock.s3.bitiful.net/happy.png",
+        "https://saroprock.s3.bitiful.net/color.png",
+        "https://saroprock.s3.bitiful.net/confuse.png",
+        "https://saroprock.s3.bitiful.net/heart.png",
+        "https://saroprock.s3.bitiful.net/rocket.png",
+        "https://saroprock.s3.bitiful.net/eyes.png",],
+    });
+  </script>
 </BaseLayout>
