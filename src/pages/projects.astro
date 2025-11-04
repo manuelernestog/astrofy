@@ -5,47 +5,65 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
 <BaseLayout title = "Projects" sideBarActiveItemID="projects">
   <div>
-    <div class="text-3xl w-full font-bold mb-5">Projects Header</div>
+    <div class="text-3xl w-full font-bold mb-5">Current Projects</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
+    title="IvyLine Search"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
+    desc="Full-stack web app democratizing college advice with semantic search for 200+ opportunities. Scaled to 500 users in 5 days with 100K LinkedIn impressions. Built with Grok 3, Xenova embeddings, and Vercel."
+    url="https://github.com/SamC1249"
+    badge="ACTIVE"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
+    title="Transformer in Rust"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    desc="Developing a transformer model in Rust from scratch. Created data pipeline and processing for pretraining. Focus on understanding low-level implementation details."
+    url="https://github.com/SamC1249"
+    badge="NEW"
   />
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Projects Header</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Hackathon Projects</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 3"
+    title="SafeRoute (HackHarvard)"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
+    desc="Chrome extension analyzing route safety using TensorFlow-based ML backend. Combines live-time and historical data for safety analysis rather than speed optimization."
+    url="https://github.com/SamC1249"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 4"
+    title="NewsAI (Anthropic Hackathon)"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    desc="Next.js app analyzing news bias and surfacing balanced perspectives. Built user interface and backend to identify source disagreement using NLP methods."
+    url="https://github.com/SamC1249"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 5"
+    title="Quantum Sensing Agent"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    desc="Collaborated with Harvard PhDs to develop memory layers for quantum sensing automation. Exploring ML applications in quantum computing research."
+    url="https://github.com/SamC1249"
+  />
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Educational & Research Projects</div>
+  </div>
+
+  <HorizontalCard
+    title="Neural Network From Scratch"
+    img="/post_img.webp"
+    desc="Trained Neural Network from scratch using basic Python packages for data management. Built to understand fundamental ML concepts without high-level frameworks."
+    url="https://github.com/SamC1249"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Roman Economics Research Paper"
+    img="/post_img.webp"
+    desc="Authored regression analysis of inflation vs. soldier pay in Late Antiquity. Featured by the National Committee for Latin and Greek."
+    url="https://github.com/SamC1249"
   />
 </BaseLayout>
