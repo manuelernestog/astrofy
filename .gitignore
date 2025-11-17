@@ -20,3 +20,6 @@ pnpm-debug.log*
 
 # Astro
 .astro/
+
+# WebStorm
+.idea

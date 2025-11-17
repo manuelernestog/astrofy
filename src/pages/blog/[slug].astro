@@ -1,34 +1,20 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
-import { BlogSchema } from "../../content/config";
-import PostLayout from "../../layouts/PostLayout.astro";
+import {getCollection, render} from "astro:content";
 import createSlug from "../../lib/createSlug"
+import PostLayout from "../../layouts/PostLayout.astro";
 
 export async function getStaticPaths() {
-  const postEntries = await getCollection("blog");
-  return postEntries.map((entry) => ({
-    params: { slug: createSlug(entry.data.title, entry.slug) },
-    props: { entry },
-  }));
+    const posts = await getCollection("blog");
+    return posts.map((entry) => ({
+        params: {slug: createSlug(entry.data.title, entry.id)},
+        props: {entry},
+    }));
 }
 
-interface Props {
-  entry: CollectionEntry<"blog">;
-}
-
-const { entry } = Astro.props;
-const post: BlogSchema = entry.data;
-const { Content } = await entry.render();
+const {entry} = Astro.props;
+const {Content} = await render(entry);
 ---
 
-<PostLayout
-  title={post.title}
-  description={post.description}
-  pubDate={post.pubDate}
-  heroImage={post.heroImage}
-  updatedDate={post.updatedDate}
-  badge={post.badge}
-  tags={post.tags}
->
-  <Content />
+<PostLayout post={entry}>
+    <Content/>
 </PostLayout>

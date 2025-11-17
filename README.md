@@ -64,7 +64,7 @@ pnpm run dev
 │   │   └── rss.xml.js
 │   ├── styles/
 │   │   └── global.css
-│   └── config.ts
+│   └── content.config.ts
 ├── public/
 │   ├── favicon.svg
 │   └── profile.webp
@@ -77,7 +77,7 @@ pnpm run dev
 
 ### Site config
 
-You can change global site configuration on '/src/config.ts' file:
+You can change global site configuration on '/src/content.config.ts' file:
 
 - **SITE_TITLE**: Default pages title.
 - **SITE_DESCRIPTION**: Default pages title.
@@ -100,9 +100,8 @@ The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack. You c
 
 To add a new page in the sidebar go to the `SideBarMenu` component.
 
-```
-<li><a class="py-3 text-base" id="home" href="/">Home</a></li>
-
+```jsx
+<li><a class={`py-3 text-base ${sideBarActiveItemID === "home" ? activeClass : ""}`} href="/">Home</a></li>
 ```
 
 **Note**: In order to change the sidebar menu's active item, you need to setup the prop `sideBarActiveItemID` in the `BaseLayout` component of your new page and add that id to the link in the `SideBarMenu`
@@ -124,23 +123,22 @@ The timeline components are used to confirm the CV.
 
 #### Card & HorizontalCard
 
-The cards are primarly used for the Project and the Blog components. They include a picture, a title, and a description. 
+The cards are primarily used for the Project and the Blog components. They include a picture, a title, and a description. 
 
 ```html
-<HorizontalCard title="Card Title" img="imge_url" desc="Description" url="Link
+<HorizontalCard title="Card Title" img="image_url" desc="Description" url="Link
 URL" target="Optional link target (_blank default)" badge="Optional badge"
 tags={['Array','of','tags']} />
 ```
 
 #### HorizontalCard Shop Item
 
-
 This component is already included in the Store layout of the template. In case you want to use it in another place these are the props.
 
 ```html
 <HorizontalShopItem
   title="Item Title"
-  img="imge_url"
+  img="image_url"
   desc="Item description"
   pricing="current_price"
   oldPricing="old_price"
@@ -148,14 +146,14 @@ This component is already included in the Store layout of the template. In case 
   badge="Optional badge"
   url="item details url"
   custom_link="Custom link url"
-  custom_link_label="Cutom link btn label"
+  custom_link_label="Custom link button label"
   target="Optional link target (_self default)"
 />
 ```
 
 #### Adding a Custom Component
 
-To add a custom component, you can create a .astro file in the components folder under the source folder. 
+To add a custom component, you can create a `.astro` file in the components folder under the source folder. 
 
 Components must follow this template. The ```---``` represents the code fence and uses Javascript and can be used for imports. 
 
@@ -168,7 +166,7 @@ The HTML component is the actual style of your new component.
 <!-- Component Template (HTML + JS Expressions) -->
 ```
 
-For more details, see the [astro components](https://docs.astro.build/en/core-concepts/astro-components/) documentation here. 
+For more details, see the [Astro Components](https://docs.astro.build/en/core-concepts/astro-components/) documentation here. 
 
 ### Layouts
 
@@ -178,15 +176,15 @@ The BaseLayout defines a general template for each new webpage you want to add. 
 
 ### Content
 
-You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/' folder, you will need add it at config.ts.
+You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/` folder, you will need add it at `content.config.ts`.
 
-#### config.ts
+#### content.config.ts
 
 Where you need to define your content collections, we define our content schemas too.
 
 #### Blog
 
-Add your `md` blog post in the `/content/blog/` folder.
+Add your `.md` blog post in the `/content/blog/` folder.
 
 ##### Post format
 
@@ -217,7 +215,7 @@ The `[slug].astro` is the base route for every blog post, you can customize the 
 
 #### Shop
 
-Add your `md` item in the `/pages/shop/` folder.
+Add your `.md` item in the `/pages/shop/` folder.
 
 ##### [page].astro
 
@@ -227,7 +225,7 @@ The `[page].astro` is the route to work with the paginated item list. You can ch
 
 Add code with this format at the top of each item file.
 
-```js
+```
 ---
 title: "Demo Item 1"
 description: "Item description"
@@ -251,9 +249,30 @@ Feel free to modify the content included in the pages that the template contains
 
 ### Theming
 
-To change the template theme change the `data-theme` attribute of the `<html>` tag in `BaseLayout.astro` file.
+Themes are configured directly within your CSS file using the `@plugin` directive.
 
-You can choose among 30 themes available or create your custom theme. See themes available [here](https://daisyui.com/docs/themes/).
+To enable specific themes, modify your `app.css` as follows:
+
+```css
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, cupcake;
+}
+```
+
+This configuration sets `light` as the default theme, `dark` for users with a dark mode preference, and includes `cupcake` as an additional option.
+
+To apply a theme to your application, set the `data-theme` attribute on the `<html>` element:
+
+```html
+<html data-theme="cupcake">
+```
+
+For a complete list of available themes and customization options, refer to the daisyUI themes documentation:
+- [daisyUI Themes Documentation](https://daisyui.com/docs/themes/)
+
+To create custom themes, utilize the daisyUI Theme Generator:
+- [daisyUI Theme Generator](https://daisyui.com/theme-generator/)
 
 ## Sitemap
 

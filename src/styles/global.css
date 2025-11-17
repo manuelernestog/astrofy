@@ -1,3 +1,8 @@
-.time-line-container>div:last-child .education__time>.education__line {
+@import "tailwindcss";
+
+@plugin "daisyui";
+@plugin "@tailwindcss/typography";
+
+.time-line-container > div:last-child .education__time > .education__line {
     display: none;
 }
