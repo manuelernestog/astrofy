@@ -1,78 +1,186 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
-
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const last_posts = posts.slice(0, 3);
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import SystemMonitor from "../components/SystemMonitor.astro";
+import ContactTerminal from "../components/ContactTerminal.astro";
 ---
 
-<BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
-    <div class="py-2">
-      <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
-      </text>
+<Layout title="Usuario | Cloud & Dev Portfolio">
+    <section
+        id="hero"
+        class="min-h-[80vh] flex flex-col justify-center items-start"
+    >
+        <div class="space-y-4">
+            <p class="text-green-500 text-sm md:text-base animate-pulse">
+                init_sequence_start
+            </p>
+            <h1
+                class="text-4xl md:text-6xl font-bold text-white tracking-tight"
+            >
+                Hola, soy <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500"
+                    >Ismael Melgarejo</span
+                >
+            </h1>
+            <h2 class="text-xl md:text-2xl text-gray-400">
+                Desarrollo. Infraestructura. Servidores.
+            </h2>
+            <div
+                class="border border-gray-800 bg-black p-6 rounded shadow-lg font-mono mt-6 max-w-lg text-sm"
+            >
+                <div
+                    class="flex justify-between items-center mb-4 border-b border-gray-800 pb-2"
+                >
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="text-gray-500 text-xs flex gap-2">
+                        <span>user@portfolio:~</span>
+                        <span class="text-gray-600">bash</span>
+                    </div>
+                </div>
+                <div class="font-mono space-y-2">
+                    <p class="text-green-400">$ cat profile.json</p>
+                    <div class="text-gray-300 pl-4">
+                        &#123;<br />
+                        <span class="text-yellow-400">&nbsp;&nbsp;"role"</span>:
+                        "Desarrollador",<br />
+                        <span class="text-yellow-400">&nbsp;&nbsp;"focus"</span
+                        >: ["Development", "DevOps", "Servidores"],<br />
+                        <span class="text-yellow-400">&nbsp;&nbsp;"status"</span
+                        >: <span class="text-green-400"
+                            >"Ready to implement Friday"</span
+                        ><br />
+                        &#125;
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 flex gap-4">
+                <a
+                    href="#projects"
+                    class="px-6 py-3 bg-green-600/10 border border-green-500/50 text-green-400 hover:bg-green-600/20 hover:text-green-300 transition-all rounded text-sm font-semibold"
+                >
+                    [ VIEW_PROJECTS ]
+                </a>
+                <a
+                    href="#contact"
+                    class="px-6 py-3 bg-gray-800/50 border border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white transition-all rounded text-sm font-semibold"
+                >
+                    ./contact_me.sh
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/ismaelmelgarejo/"
+                    class="px-6 py-3 bg-gray-800/50 border border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white transition-all rounded text-sm font-semibold"
+                    target="_blank"
+                >
+                    ./linkedin.sh
+                </a>
+                <a
+                    href="https://github.com/ismaelmelgarejo"
+                    class="px-6 py-3 bg-gray-800/50 border border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white transition-all rounded text-sm font-semibold"
+                    target="_blank"
+                >
+                    ./github.sh
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 border-t border-gray-800/50">
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-white flex items-center">
+                <span class="text-green-500 mr-2">$</span>
+                ls -la ./projects
+            </h2>
+            <p class="text-gray-500 text-sm mt-2 ml-6">
+                // Showing list of deployed services
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ProjectCard
+                title="SOC-Bitacora"
+                description="RESTful API escalable construida para dejar registro de la actividad de un SOC."
+                status="maintenance"
+                tech={["HTML", "CSS", "JavaScript", "Django"]}
+                repo="https://github.com/ismaelmelgarejo/BE_Bitacora_SOC2.git"
+            />
+            <!--<ProjectCard
+                title="dashboard-analytics"
+                description="Panel de administración en tiempo real para visualizar métricas de sistema y logs de servidores."
+                status="maintenance"
+                tech={["React", "D3.js", "Firebase", "Tailwind"]}
+                link="https://example.com"
+                repo="https://github.com"
+            />
+            <ProjectCard
+                title="portfolio-v1"
+                description="Sitio web personal anterior. Deprecado en favor de esta nueva versión basada en Astro."
+                status="offline"
+                tech={["HTML", "SASS", "Vanilla JS"]}
+                repo="https://github.com"
+            />
+            <ProjectCard
+                title="cloud-monitor-bot"
+                description="Bot de Discord para monitorear estado de servidores y notificar caídas en tiempo real."
+                status="deploying"
+                tech={["Python", "Discord.py", "AWS Lambda"]}
+                link="https://example.com"
+            /> -->
+        </div>
+    </section>
+
+    <!-- Tech Stack Sections -->
+    <div id="stack">
+        <!-- Tech Stack Section (Development) -->
+        <section id="stack-dev" class="py-20 border-t border-gray-800/50">
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold text-white flex items-center">
+                    <span class="text-green-500 mr-2">$</span>
+                    top -u dev
+                </h2>
+                <p class="text-gray-500 text-sm mt-2 ml-6">
+                    // Foreground development processes & threads (Skills)
+                </p>
+            </div>
+
+            <SystemMonitor title="DEV_PROCESSES" type="development" />
+        </section>
+
+        <!-- Tech Stack Section (Infrastructure) -->
+        <section id="stack-infra" class="py-20 border-t border-gray-800/50">
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold text-white flex items-center">
+                    <span class="text-green-500 mr-2">$</span>
+                    htop -t
+                </h2>
+                <p class="text-gray-500 text-sm mt-2 ml-6">
+                    // Active infrastructure daemons & services (Skills)
+                </p>
+            </div>
+
+            <SystemMonitor title="INFRA_DAEMONS" type="infrastructure" />
+        </section>
     </div>
-    <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a>
-    </div>
-  </div>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
-  </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 border-t border-gray-800/50 mb-20">
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-white flex items-center">
+                <span class="text-green-500 mr-2">$</span>
+                ssh user@contact
+            </h2>
+            <p class="text-gray-500 text-sm mt-2 ml-6">
+                // Initialize communication protocol
+            </p>
+        </div>
 
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div>
-
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
-</BaseLayout>
+        <div class="max-w-2xl mx-auto">
+            <ContactTerminal />
+        </div>
+    </section>
+</Layout>

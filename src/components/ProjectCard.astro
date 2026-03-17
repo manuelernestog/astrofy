@@ -1,0 +1,72 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	status: 'online' | 'offline' | 'maintenance' | 'deploying';
+	tech: string[];
+	link?: string;
+    repo?: string;
+}
+
+const { title, description, status, tech, link, repo } = Astro.props;
+
+const statusColors = {
+	online: 'bg-green-500',
+	offline: 'bg-red-500',
+	maintenance: 'bg-yellow-500',
+    deploying: 'bg-blue-500'
+};
+
+const statusText = {
+    online: 'Running',
+    offline: 'Stopped',
+    maintenance: 'Maintenance',
+    deploying: 'Initializing...'
+};
+---
+
+<div class="border border-gray-800 bg-[#0d1117] p-5 rounded-sm hover:border-gray-600 transition-all group relative overflow-hidden">
+    <!-- Status Bar -->
+	<div class="flex justify-between items-center mb-4 border-b border-gray-800 pb-2">
+		<h3 class="font-bold text-gray-200 text-lg flex items-center">
+            <span class="text-gray-500 mr-2">./</span>{title}
+        </h3>
+		<div class="flex items-center space-x-2 text-xs font-mono uppercase">
+			<span class={`w-2 h-2 rounded-full ${statusColors[status]} ${status === 'online' || status === 'deploying' ? 'animate-pulse' : ''}`}></span>
+			<span class="text-gray-400">{statusText[status]}</span>
+		</div>
+	</div>
+
+    <!-- Description -->
+	<p class="text-gray-400 text-sm mb-6 leading-relaxed font-mono">
+		<span class="text-gray-600">></span> {description}
+	</p>
+
+    <!-- Tech Stack -->
+	<div class="flex flex-wrap gap-2 mb-6">
+		{tech.map((t) => (
+			<span class="px-2 py-1 text-xs border border-gray-700 rounded bg-gray-800/50 text-gray-300 font-mono">
+				{t}
+			</span>
+		))}
+	</div>
+
+    <!-- Actions -->
+	<div class="flex gap-4 mt-auto">
+        {link && (
+            <a href={link} target="_blank" rel="noopener noreferrer" class="text-xs bg-green-500/10 text-green-400 border border-green-500/30 px-3 py-1.5 rounded hover:bg-green-500/20 transition-colors flex items-center">
+                [ OPEN_APP ]
+            </a>
+        )}
+        {repo && (
+            <a href={repo} target="_blank" rel="noopener noreferrer" class="text-xs bg-gray-800 text-gray-400 border border-gray-700 px-3 py-1.5 rounded hover:bg-gray-700 hover:text-white transition-colors flex items-center">
+                [ VIEW_SOURCE ]
+            </a>
+        )}
+	</div>
+    
+    <!-- Hover corner effect -->
+    <div class="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div class="w-16 h-16 border-t-2 border-r-2 border-green-500/20 rounded-tr-lg"></div>
+    </div>
+</div>

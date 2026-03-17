@@ -1,0 +1,52 @@
+---
+---
+
+<div class="border border-gray-800 bg-black p-6 rounded shadow-lg font-mono">
+    <div
+        class="flex justify-between items-center mb-4 border-b border-gray-800 pb-2"
+    >
+        <div class="flex space-x-2">
+            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+        </div>
+        <div class="text-gray-500 text-xs">user@portfolio:~</div>
+    </div>
+
+    <form class="space-y-4">
+        <div>
+            <label for="email" class="block text-gray-400 text-xs mb-1">
+                <span class="text-green-500">user@source:~$</span> export EMAIL=
+            </label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full bg-transparent border-b border-gray-700 text-gray-200 focus:outline-none focus:border-green-500 py-1"
+                placeholder="tu@email.com"
+                required
+            />
+        </div>
+
+        <div>
+            <label for="message" class="block text-gray-400 text-xs mb-1">
+                <span class="text-green-500">user@source:~$</span> echo "MESSAGE"
+                /dev/null
+            </label>
+            <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="w-full bg-gray-900/50 border border-gray-700 rounded p-2 text-gray-200 focus:outline-none focus:border-green-500 mt-2"
+                placeholder="Escribe tu mensaje aquí..."
+                required></textarea>
+        </div>
+
+        <button
+            type="submit"
+            class="mt-4 px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-bold rounded transition-colors w-full sm:w-auto"
+        >
+            ./send_message.sh
+        </button>
+    </form>
+</div>

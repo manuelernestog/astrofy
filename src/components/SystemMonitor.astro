@@ -1,0 +1,119 @@
+---
+export interface Props {
+    title?: string;
+    type?: "development" | "infrastructure";
+}
+
+const { title = "SYSTEM_RESOURCES", type = "development" } = Astro.props;
+
+// Arrays of skills mimicking processes
+const devSkills = [
+    { name: "javascript_ts", status: "running", uptime: "145d", mem: "124MB" },
+    { name: "angular", status: "running", uptime: "89d", mem: "256MB" },
+    {
+        name: "java_spring_boot",
+        status: "running",
+        uptime: "89d",
+        mem: "256MB",
+    },
+    { name: "sql", status: "running", uptime: "12d", mem: "84MB" },
+    {
+        name: "html_css_tailwind",
+        status: "running",
+        uptime: "320d",
+        mem: "45MB",
+    },
+    { name: "python_django", status: "running", uptime: "5d", mem: "0MB" },
+    { name: "git_workflow", status: "running", uptime: "200d", mem: "12MB" },
+    { name: "Postgres", status: "running", uptime: "200d", mem: "12MB" },
+];
+
+const infraSkills = [
+    { name: "linux_bash", status: "running", uptime: "999d", mem: "14MB" },
+    { name: "docker_k8s", status: "running", uptime: "45d", mem: "512MB" },
+    { name: "Proxmox", status: "active", uptime: "30d", mem: "--" },
+    { name: "ci_cd_pipelines", status: "running", uptime: "15d", mem: "128MB" },
+    { name: "sql_nosql_db", status: "running", uptime: "150d", mem: "1.2GB" },
+    { name: "nginx_apache", status: "running", uptime: "80d", mem: "32MB" },
+    { name: "Jenkins", status: "running", uptime: "80d", mem: "32MB" },
+];
+
+const skills = type === "infrastructure" ? infraSkills : devSkills;
+---
+
+<div
+    class="border border-gray-800 bg-[#0d1117] p-6 rounded relative overflow-hidden font-mono"
+>
+    <!-- Header -->
+    <div
+        class="flex justify-between items-center mb-6 border-b border-gray-800 pb-2"
+    >
+        <h3 class="text-white font-bold flex items-center text-sm md:text-base">
+            <span class="text-amber-500 mr-2">⚠</span>
+            {title}
+        </h3>
+        <span class="text-xs text-gray-500">USER: ismael</span>
+    </div>
+
+    <!-- Content Table Header -->
+    <div
+        class="hidden md:grid grid-cols-12 gap-4 text-xs text-gray-500 mb-3 px-2"
+    >
+        <div class="col-span-5">PROCESS_NAME</div>
+        <div class="col-span-3">STATUS</div>
+        <div class="col-span-2">UPTIME</div>
+        <div class="col-span-2 text-right">MEM_USAGE</div>
+    </div>
+
+    <!-- Content -->
+    <div class="space-y-2">
+        {
+            skills.map((skill) => (
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 items-center text-xs p-2 rounded bg-black/40 border border-transparent hover:border-gray-800 hover:bg-gray-900/50 transition-colors group">
+                    <div class="col-span-1 md:col-span-5 flex items-center gap-2 text-gray-300 group-hover:text-green-400 transition-colors">
+                        <span class="text-green-500 opacity-50 group-hover:opacity-100">
+                            ▶
+                        </span>
+                        {skill.name}
+                    </div>
+                    <div
+                        class={`col-span-1 md:col-span-3 flex items-center gap-2 ${
+                            skill.status === "running" ||
+                            skill.status === "active"
+                                ? "text-green-400"
+                                : "text-amber-400"
+                        }`}
+                    >
+                        <span
+                            class={`w-1.5 h-1.5 rounded-full ${
+                                skill.status === "running" ||
+                                skill.status === "active"
+                                    ? "bg-green-500 animate-pulse"
+                                    : "bg-amber-500"
+                            }`}
+                        />
+                        [{skill.status}]
+                    </div>
+                    <div class="col-span-1 md:col-span-2 text-gray-500 hidden md:block group-hover:text-gray-400 transition-colors">
+                        {skill.uptime}
+                    </div>
+                    <div class="col-span-1 md:col-span-2 text-gray-500 md:text-right hidden md:block group-hover:text-gray-400 transition-colors">
+                        {skill.mem}
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+
+    <!-- Footer decoration -->
+    <div
+        class="mt-6 pt-4 border-t border-gray-800 text-xs text-gray-600 flex justify-between"
+    >
+        <span
+            >TASKS: {skills.length} total, {
+                skills.filter((s) => s.status !== "sleeping").length
+            } running</span
+        >
+        <span>LOAD: 0.45 0.32 0.28</span>
+    </div>
+</div>
