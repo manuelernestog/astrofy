@@ -9,7 +9,7 @@ const allTags = [...new Set(items.flatMap(item => item.data.tags || []))];
 
 <BaseLayout sideBarActiveItemID="store">
   <div>
-    <div class="text-3xl w-full font-bold mb-5">Catálogo Completo</div>
+    <div class="text-3xl w-full font-bold mb-5">Catalogo Completo</div>
   </div>
 
   <!-- Botones de Filtro -->
@@ -38,7 +38,7 @@ const allTags = [...new Set(items.flatMap(item => item.data.tags || []))];
     }
   </div>
 
-  <!-- Script del Filtro adaptado a Astro -->
+  <!-- Script del Filtro -->
   <script>
     function setupFilters() {
       const buttons = document.querySelectorAll('.filter-btn');
@@ -69,7 +69,6 @@ const allTags = [...new Set(items.flatMap(item => item.data.tags || []))];
       });
     }
 
-    // Esto asegura que el filtro funcione al cambiar de página
     document.addEventListener('astro:page-load', setupFilters);
   </script>
 </BaseLayout>
