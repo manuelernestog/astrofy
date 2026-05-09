@@ -12,10 +12,13 @@ const { sideBarActiveItemID } = Astro.props;
       <a href="/">
         <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto">
           <div class="w-[8.5rem]">
-            <Image class="mask mask-circle" format="webp" width={300} height={300} src="/profile.webp" alt="Profile image" />
+            <!-- Espacio reservado por si en el futuro quieres poner un logo, ahora está vacío -->
           </div>
         </div>
       </a>
+    </div>
+    <div class="w-full text-center mb-6 font-bold text-xl">
+      <a href="/">Closet</a>
     </div>
     <SideBarMenu sideBarActiveItemID={sideBarActiveItemID} />
     <SideBarFooter />
