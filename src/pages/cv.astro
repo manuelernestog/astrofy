@@ -1,92 +1,184 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import TimeLineElement from "../components/cv/TimeLine.astro";
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Profile</div>
+  
+  <!-- Contact Header -->
+  <div class="mb-10 p-6 bg-skin-card rounded-lg border border-skin-line">
+    <div class="text-4xl font-bold mb-4">Varsan Raja</div>
   </div>
 
-  <div class="mb-10 text-justify">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </div>
-
+  <!-- Education -->
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Education</div>
   </div>
 
-  <div class="time-line-container grid gap-4 mb-10">
-    <TimeLineElement
-      title="Title Name"
-      subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
-    />
-    <TimeLineElement
-      title="Title Name"
-      subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
-    />
+  <div class="space-y-6 mb-10">
+    <div class="pl-4 border-l-2 border-skin-accent/40 hover:border-skin-accent transition-colors">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+        <div>
+          <h3 class="text-lg font-semibold">Oswego East High School</h3>
+          <p class="text-skin-text/80">Current Highschool</p>
+        </div>
+        <span class="text-sm text-skin-text/60 whitespace-nowrap sm:text-right">Georgetown, TX — May 2022</span>
+      </div>
+      <ul class="list-disc ml-5 mt-3 text-sm text-skin-text/70 grid gap-1.5">
+        <li>GPA: 3.7/4.0</li>
+        <li>Relevant Coursework: Data Structures, Algorithms, Database Systems, Software Engineering, Machine Learning</li>
+      </ul>
+    </div>
+
+    <div class="pl-4 border-l-2 border-skin-accent/40 hover:border-skin-accent transition-colors">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+        <div>
+          <h3 class="text-lg font-semibold">Blinn College</h3>
+          <p class="text-skin-text/80">Associate of Science</p>
+        </div>
+        <span class="text-sm text-skin-text/60 whitespace-nowrap sm:text-right">Brenham, TX — May 2020</span>
+      </div>
+    </div>
   </div>
 
+  <!-- Experience -->
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Experience</div>
   </div>
 
-  <div class="time-line-container mb-10">
-    <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-    </TimeLineElement>
-    <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-    </TimeLineElement>
-    <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-    </TimeLineElement>
+  <div class="space-y-8 mb-10">
+    <div class="pl-4 border-l-2 border-skin-accent/40 hover:border-skin-accent transition-colors">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+        <div>
+          <h3 class="text-lg font-semibold">Software Engineer</h3>
+          <p class="text-skin-text/80">Tech Company Inc. — Austin, TX</p>
+        </div>
+        <span class="text-sm text-skin-text/60 whitespace-nowrap sm:text-right">June 2022 — Present</span>
+      </div>
+      <ul class="list-disc ml-5 mt-3 text-sm text-skin-text/70 grid gap-1.5">
+        <li>Developed and maintained RESTful APIs using Python and Django, serving 10,000+ daily users</li>
+        <li>Implemented CI/CD pipelines using GitHub Actions, reducing deployment time by 40%</li>
+        <li>Collaborated with cross-functional teams to design and implement new features from conception to launch</li>
+        <li>Wrote unit and integration tests achieving 90% code coverage</li>
+      </ul>
+    </div>
+
+    <div class="pl-4 border-l-2 border-skin-accent/40 hover:border-skin-accent transition-colors">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+        <div>
+          <h3 class="text-lg font-semibold">Software Engineering Intern</h3>
+          <p class="text-skin-text/80">StartupXYZ — Remote</p>
+        </div>
+        <span class="text-sm text-skin-text/60 whitespace-nowrap sm:text-right">May 2021 — August 2021</span>
+      </div>
+      <ul class="list-disc ml-5 mt-3 text-sm text-skin-text/70 grid gap-1.5">
+        <li>Built responsive web interfaces using React.js and Tailwind CSS</li>
+        <li>Optimized database queries resulting in 30% improvement in page load times</li>
+        <li>Participated in agile sprint planning and daily stand-ups</li>
+      </ul>
+    </div>
+
+    <div class="pl-4 border-l-2 border-skin-accent/40 hover:border-skin-accent transition-colors">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+        <div>
+          <h3 class="text-lg font-semibold">Teaching Assistant — Data Structures</h3>
+          <p class="text-skin-text/80">Southwestern University — Georgetown, TX</p>
+        </div>
+        <span class="text-sm text-skin-text/60 whitespace-nowrap sm:text-right">August 2020 — May 2022</span>
+      </div>
+      <ul class="list-disc ml-5 mt-3 text-sm text-skin-text/70 grid gap-1.5">
+        <li>Led weekly lab sessions for 30+ students covering data structures and algorithms</li>
+        <li>Created supplemental learning materials and practice problems</li>
+        <li>Provided one-on-one tutoring during office hours</li>
+      </ul>
+    </div>
   </div>
 
+  <!-- Projects -->
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications</div>
+    <div class="text-3xl w-full font-bold">Projects</div>
   </div>
 
-  <ul class="list-disc mx-6 mb-10 grid gap-2">
-    <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
-    </li>
-    <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
-    </li>
-  </ul>
+  <div class="grid gap-5 mb-10">
+    <div class="p-4 bg-skin-card rounded-lg border border-skin-line hover:border-skin-accent/50 transition-colors">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+        <div>
+          <h3 class="text-lg font-semibold">Gitlytics</h3>
+          <p class="text-sm text-skin-text/70 mt-1">A GitHub repository analytics tool that visualizes contribution patterns, language breakdown, and commit history.</p>
+        </div>
+        <a href="https://github.com/jakeryan/gitlytics" target="_blank" class="text-sm text-skin-accent hover:underline whitespace-nowrap flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          View Project
+        </a>
+      </div>
+      <div class="flex flex-wrap gap-2 mt-3">
+        <span class="px-2 py-0.5 text-xs bg-skin-fill rounded">Python</span>
+        <span class="px-2 py-0.5 text-xs bg-skin-fill rounded">Flask</span>
+        <span class="px-2 py-0.5 text-xs bg-skin-fill rounded">React</span>
+        <span class="px-2 py-0.5 text-xs bg-skin-fill rounded">D3.js</span>
+        <span class="px-2 py-0.5 text-xs bg-skin-fill rounded">GitHub API</span>
+      </div>
+    </div>
 
+    <div class="p-4 bg-skin-card rounded-lg border border-skin-line hover:border-skin-accent/50 transition-colors">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+        <div>
+          <h3 class="text-lg font-semibold">Simple Paintball</h3>
+          <p class="text-sm text-skin-text/70 mt-1">Multiplayer browser-based paintball game with real-time physics and matchmaking system.</p>
+        </div>
+        <a href="https://github.com/jakeryan/paintball" target="_blank" class="text-sm text-skin-accent hover:underline whitespace-nowrap flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          View Project
+        </a>
+      </div>
+      <div class="flex flex-wrap gap-2 mt-3">
+        <span class="px-2 py-0.5 text-xs bg-skin-fill rounded">JavaScript</span>
+        <span class="px-2 py-0.5 text-xs bg-skin-fill rounded">Node.js</span>
+        <span class="px-2 py-0.5 text-xs bg-skin-fill rounded">Socket.io</span>
+        <span class="px-2 py-0.5 text-xs bg-skin-fill rounded">HTML5 Canvas</span>
+      </div>
+    </div>
+
+    <div class="p-4 bg-skin-card rounded-lg border border-skin-line hover:border-skin-accent/50 transition-colors">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+        <div>
+          <h3 class="text-lg font-semibold">Task Manager API</h3>
+          <p class="text-sm text-skin-text/70 mt-1">RESTful API for task management with user authentication, role-based access control, and file uploads.</p>
+        </div>
+        <a href="https://github.com/jakeryan/task-api" target="_blank" class="text-sm text-skin-accent hover:underline whitespace-nowrap flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          View Project
+        </a>
+      </div>
+      <div class="flex flex-wrap gap-2 mt-3">
+        <span class="px-2 py-0.5 text-xs bg-skin-fill rounded">Python</span>
+        <span class="px-2 py-0.5 text-xs bg-skin-fill rounded">Django</span>
+        <span class="px-2 py-0.5 text-xs bg-skin-fill rounded">PostgreSQL</span>
+        <span class="px-2 py-0.5 text-xs bg-skin-fill rounded">Docker</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Technical Skills -->
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Skills</div>
+    <div class="text-3xl w-full font-bold">Technical Skills</div>
   </div>
 
-  <ul class="list-disc md:columns-5 columns-2 mx-6">
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-  </ul>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+    <div>
+      <span class="font-semibold text-skin-text/90">Languages</span>
+      <p class="text-skin-text/70 mt-1">Python, JavaScript, Java, C++, SQL, HTML/CSS</p>
+    </div>
+    <div>
+      <span class="font-semibold text-skin-text/90">Frameworks</span>
+      <p class="text-skin-text/70 mt-1">Django, React.js, Node.js, Flask, Bootstrap</p>
+    </div>
+    <div>
+      <span class="font-semibold text-skin-text/90">Tools</span>
+      <p class="text-skin-text/70 mt-1">Git, Docker, AWS, Linux, Vim, Postman</p>
+    </div>
+    <div>
+      <span class="font-semibold text-skin-text/90">Databases</span>
+      <p class="text-skin-text/70 mt-1">PostgreSQL, MongoDB, MySQL, Redis</p>
+    </div>
+  </div>
 </BaseLayout>
