@@ -23,11 +23,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
+          cache: pnpm
 
-      - run: npm ci
+      - run: pnpm ci
 
-      - run: npm run build
+      - run: pnpm run build
 
       - uses: actions/upload-pages-artifact@v3
         with:
