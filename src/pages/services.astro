@@ -1,40 +1,51 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
+import BandcampCard from "../components/BandcampCard.astro";
+import Bandcamp from "../components/Bandcamp.astro";
 ---
 
 <BaseLayout title="Projects" sideBarActiveItemID="services">
   <div>
-    <div class="text-3xl w-full font-bold mb-5">Services Header</div>
+    <div class="text-3xl w-full font-bold mb-5">Song Tracks</div>
   </div>
 
-  <HorizontalCard
-    title="Service 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    badge="NEW"
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Service 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Service 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Service 4"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+    <Bandcamp trackId="770636299" />
+    
+    <Bandcamp trackId="2120050355" />
+    
+    <Bandcamp trackId="4108699406"/>
+    
+    <Bandcamp trackId="1772718821"/>
+   
+    <Bandcamp trackId="2161355945"/>
+    
+    <Bandcamp trackId="3110244276"/>
+    
+    <Bandcamp trackId="1163748380"/>
+    
+    <Bandcamp trackId="1041160149"/>
+    
+    <Bandcamp trackId="1937622489"/>
+    
+    <Bandcamp trackId="4188375460"/>
+    
+    <Bandcamp trackId="847371711"/>
+    
+    <Bandcamp trackId="2389135586"/>
+    
+    <Bandcamp trackId="1140978569"/>
+    
+    <Bandcamp trackId="4032285903"/>
+    
+    <Bandcamp trackId="3354593632"/>
+    
+    <Bandcamp trackId="146675246"/>
+    
+    <Bandcamp trackId="1466755857"/>
+    
+    <Bandcamp trackId="4195239024"/>
+    
+</div>
 </BaseLayout>
