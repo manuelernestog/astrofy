@@ -5,7 +5,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://PaleoPoet.com',
+  site: 'https://paleopoet.com',
     integrations: [mdx(), sitemap(), tailwind()],
 vite: {
         server: {
