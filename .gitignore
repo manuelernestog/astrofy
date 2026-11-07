@@ -20,3 +20,4 @@ pnpm-debug.log*
 
 # Astro
 .astro/
+.vs/
