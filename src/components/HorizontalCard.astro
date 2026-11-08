@@ -1,43 +1,62 @@
 ---
-const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
+const { title, img, desc, url, badge, tags, target = "_blank", mp4 } = Astro.props;
 import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 ---
 
-<div
-  class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
->
-  <a href={url} target={target}>
-    <div class="hero-content flex-col md:flex-row">
-      {
-        img && (
-          <Image
-            src={img}
-            width={750}
-            height={422}
-            format="webp"
-            alt={title}
-            class="max-w-full md:max-w-[13rem] rounded-lg"
-          />
-        )
-      }
-      <div class="grow w-full">
-        <h1 class="text-xl font-bold">
+<div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%] p-6 mb-6 border border-base-300">
+  <div class="flex flex-col">
+    
+    <!-- Top Row: Title and Poetry -->
+    <div class="w-full mb-6">
+      <a href={url} target={target} class="hover:underline">
+        <h1 class="text-2xl font-bold text-primary">
           {title}
           {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
         </h1>
-        <p class="py-1 text-1xl">{desc}</p>
-        <div class="card-actions justify-end">
-          {
-            tags &&
-              tags.map((tag) => (
-                <a href={`${tag_url}/${tag}`} class="badge badge-outline">
-                  {tag}
-                </a>
-              ))
-          }
-        </div>
-      </div>
+      </a>
+      <p class="py-4 text-base whitespace-pre-line text-base-content">{desc}</p>
     </div>
-  </a>
+
+    <!-- Bottom Row: Artifact Image and MP4 Player -->
+    <div class="flex flex-col md:flex-row gap-6 items-start">
+      {
+        img && (
+          <a href={url} target={target} class="shrink-0">
+            <Image
+              src={img}
+              width={750}
+              height={422}
+              format="webp"
+              alt={title}
+              class="max-w-full md:max-w-[18rem] rounded-lg shadow-md"
+            />
+          </a>
+        )
+      }
+      
+      {
+        mp4 && (
+          <div class="w-full max-w-[16rem] shrink-0">
+            <video controls preload="metadata" class="w-full rounded-lg shadow-md border border-neutral">
+              <source src={mp4} type="video/mp4" />
+            </video>
+          </div>
+        )
+      }
+    </div>
+
+    <!-- Optional: Tags -->
+    <div class="card-actions justify-end mt-4">
+      {
+        tags &&
+          tags.map((tag) => (
+            <a href={`${tag_url}/${tag}`} class="badge badge-outline">
+              {tag}
+            </a>
+          ))
+      }
+    </div>
+
+  </div>
 </div>

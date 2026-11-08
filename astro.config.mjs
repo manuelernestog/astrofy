@@ -3,8 +3,14 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
 
-// https://astro.build/config
 export default defineConfig({
-  site: 'https://astrofy-template.netlify.app',
-  integrations: [mdx(), sitemap(), tailwind()]
+  site: 'https://paleopoet.com',
+    integrations: [mdx(), sitemap(), tailwind()],
+vite: {
+        server: {
+            watch: {
+                ignored: ['**/.vs/**']
+            }
+        }
+    }
 });

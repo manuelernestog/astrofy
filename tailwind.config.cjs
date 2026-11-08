@@ -5,9 +5,24 @@ module.exports = {
 		extend: {},
 	},
 	plugins: [require("@tailwindcss/typography"),require("daisyui")],
-	daisyui: {
-		themes: true, // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
-		darkTheme: "dark", // name of one of the included themes for dark mode
-		logs: false, // Shows info about daisyUI version and used config in the console when building your CSS
-	  }
+    daisyui: {
+        themes: [
+            {
+                dark: {
+                    "primary": "#D4AF37",      // Link Color
+                    "secondary": "#D69999",    // Secondary Text Color
+                    "accent": "#C5B57D",       // Matching Accent to Main Text
+                    "neutral": "#1C1917",      // Deep Shadow
+                    "base-100": "#241524",     // Body / Background / Nav Color
+                    "base-content": "#C5B57D", // Main Text Color
+                    "info": "#3ABFF8",
+                    "success": "#36D399",
+                    "warning": "#FBBD23",
+                    "error": "#F87272",
+                },
+            },
+            "light",
+            "dark",
+        ],
+    },
 }
